@@ -1,0 +1,27 @@
+{
+  "name": "research-packages-api",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Typed TypeScript client for the Launchpad web-service API (api.launchpad.net), generated from the published OpenAPI 3.0 spec.",
+  "license": "AGPL-3.0-or-later",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "generate": "node scripts/generate.mjs",
+    "typecheck": "tsc --noEmit",
+    "example": "node --experimental-strip-types examples/list-distributions.ts"
+  },
+  "dependencies": {
+    "openapi-fetch": "^0.13.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "openapi-typescript": "^7.6.1",
+    "typescript": "^5.7.3"
+  }
+}
