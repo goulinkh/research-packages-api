@@ -1,21 +1,7 @@
 import createClient, { type Client } from "openapi-fetch";
-import type { paths as Paths1_0 } from "./schema/1_0.ts";
-import type { paths as PathsBeta } from "./schema/beta.ts";
-import type { paths as PathsDevel } from "./schema/devel.ts";
-
-/** Launchpad API version. Maps to the `/<version>` path segment on the API host. */
-export type LaunchpadVersion = "1.0" | "beta" | "devel";
-
-/** OpenAPI `paths` type for a given Launchpad API version. */
-export type LaunchpadPaths<V extends LaunchpadVersion> = {
-  "1.0": Paths1_0;
-  beta: PathsBeta;
-  devel: PathsDevel;
-}[V];
+import type { paths } from "./schema/devel.ts";
 
 export interface LaunchpadClientOptions {
-  /** API version. Default: `"devel"`. */
-  version?: LaunchpadVersion;
   /**
    * Launchpad instance host, e.g. `"launchpad.net"` (production) or
    * `"staging.launchpad.net"`. The API host `api.<instance>` is derived.
@@ -29,42 +15,28 @@ export interface LaunchpadClientOptions {
 }
 
 /**
- * Create a typed client for the Launchpad web-service API.
+ * Create a typed client for the Launchpad web-service API (`devel` version).
  *
- * The return type is specialised to the requested `version` so paths, params,
- * and response bodies are all type-checked:
+ * Paths, params, and response bodies are type-checked against
+ * `src/schema/devel.ts`:
  *
  * ```ts
- * const lp = createLaunchpadClient({ version: "devel" });
+ * const lp = createLaunchpadClient();
  * const { data } = await lp.GET("/distros", {});
  * ```
  */
 export function createLaunchpadClient(
-  options?: LaunchpadClientOptions & { version?: "devel" },
-): Client<PathsDevel>;
-export function createLaunchpadClient(
-  options: LaunchpadClientOptions & { version: "1.0" },
-): Client<Paths1_0>;
-export function createLaunchpadClient(
-  options: LaunchpadClientOptions & { version: "beta" },
-): Client<PathsBeta>;
-export function createLaunchpadClient(
   options: LaunchpadClientOptions = {},
-): Client<Paths1_0> | Client<PathsBeta> | Client<PathsDevel> {
-  const {
-    version = "devel",
-    instance = "launchpad.net",
-    token,
-    fetchOptions,
-  } = options;
+): Client<paths> {
+  const { instance = "launchpad.net", token, fetchOptions } = options;
 
-  const baseUrl = `https://api.${instance}/${version}`;
+  const baseUrl = `https://api.${instance}/devel`;
   const headers: Record<string, string> = {
     Accept: "application/json",
     ...(token ? { Authorization: `OAuth ${token}` } : {}),
   };
 
-  return createClient<PathsDevel>({
+  return createClient<paths>({
     baseUrl,
     headers,
     ...fetchOptions,

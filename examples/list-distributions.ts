@@ -5,7 +5,7 @@
 
 import { createLaunchpadClient } from "../src/index.ts";
 
-const lp = createLaunchpadClient({ version: "devel" });
+const lp = createLaunchpadClient();
 
 // `/distros` is the top-level collection of distributions.
 const { data, response } = await lp.GET("/distros", {});

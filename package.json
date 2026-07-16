@@ -12,16 +12,19 @@
     ".": "./src/index.ts"
   },
   "scripts": {
-    "generate": "node scripts/generate.mjs",
+    "openapi:update": "npm run openapi:update-schema && npm run openapi:generate-types",
+    "openapi:update-schema": "./scripts/openapi-update-schema.sh",
+    "openapi:generate-types": "openapi-typescript .api-spec/launchpad-devel.yaml -o src/schema/devel.ts --root-types --root-types-no-schema-prefix --enum-values",
     "typecheck": "tsc --noEmit",
     "example": "node --experimental-strip-types examples/list-distributions.ts"
   },
   "dependencies": {
-    "openapi-fetch": "^0.13.5"
+    "openapi-fetch": "^0.17.0"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",
-    "openapi-typescript": "^7.6.1",
+    "openapi-typescript": "^7.13.0",
+    "openapi-typescript-helpers": "^0.1.0",
     "typescript": "^5.7.3"
   }
 }

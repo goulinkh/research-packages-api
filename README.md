@@ -21,15 +21,20 @@ client so you can call the API with full autocompletion and type checking.
 npm install
 ```
 
-## Generate the API types
+## Update the API types
 
-Types are generated from the live published specs (versions `1.0`, `beta`,
-`devel`) into `src/schema/`:
+Generation is a two-step pipeline. First the published `devel` spec is vendored
+into `.api-spec/` with a provenance header (source URL + the generator repo's
+resolved commit). Then `openapi-typescript` turns it into `src/schema/devel.ts`:
 
 ```sh
-npm run generate            # all versions
-node scripts/generate.mjs devel   # a single version
+npm run openapi:update           # update-schema + generate-types
+npm run openapi:update-schema    # fetch specs into .api-spec/
+npm run openapi:generate-types   # .api-spec/*.yaml -> src/schema/*.ts
 ```
+
+The fetch script is configurable via environment variables:
+`LP_SPEC_REPO_URL`, `LP_SPEC_BRANCH`, `LP_SPEC_PAGES_URL`, `LP_API_VERSIONS`.
 
 ## Usage
 
@@ -37,13 +42,13 @@ node scripts/generate.mjs devel   # a single version
 import { createLaunchpadClient } from "research-packages-api";
 
 // Default: production launchpad.net, API version "devel".
-const lp = createLaunchpadClient({ version: "devel" });
+const lp = createLaunchpadClient();
 
-const { data, error } = await lp.GET("/distributions");
-if (error) throw error;
+const { data, response } = await lp.GET("/distros", {});
+if (!data) throw new Error(`HTTP ${response.status}`);
 
-for (const distro of data.entries ?? []) {
-  console.log(distro.name);
+for (const entry of data.entries ?? []) {
+  console.log((entry as { name?: string }).name);
 }
 ```
 
@@ -51,20 +56,19 @@ for (const distro of data.entries ?? []) {
 
 | Option         | Default          | Description                                                      |
 | -------------- | ---------------- | --------------------------------------------------------------- |
-| `version`      | `devel`          | API version: `1.0`, `beta`, or `devel`. Selects the typed paths. |
 | `instance`     | `launchpad.net`  | Launchpad instance; API host `api.<instance>` is derived.        |
 | `token`        | —                | OAuth token, sent as `Authorization: OAuth <token>`.             |
 | `fetchOptions` | —                | Extra `openapi-fetch` options (custom `fetch`, headers, …).      |
 
-The client is fully typed per version: `GET`/`POST` paths, path/query params,
-and response bodies all come from the generated `src/schema/<version>.ts`.
+The client is fully typed: `GET`/`POST` paths, path/query params, and response
+bodies all come from the generated `src/schema/devel.ts`.
 
 ## Scripts
 
 ```sh
-npm run generate     # regenerate src/schema/*.ts from the published specs
-npm run typecheck    # tsc --noEmit
-npm run example      # run examples/list-distributions.ts against the live API
+npm run openapi:update   # vendor the devel spec + regenerate src/schema/devel.ts
+npm run typecheck        # tsc --noEmit
+npm run example          # run examples/list-distributions.ts against the live API
 ```
 
 ## Authentication
