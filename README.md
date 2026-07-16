@@ -63,11 +63,56 @@ for (const entry of data.entries ?? []) {
 The client is fully typed: `GET`/`POST` paths, path/query params, and response
 bodies all come from the generated `src/schema/devel.ts`.
 
+## Exploration
+
+Launchpad is a hypermedia API — resources link to one another via `*_link`
+fields. The `Explorer` (untyped, accepts arbitrary paths and absolute links) and
+two CLI entry points make poking around easy.
+
+### One-shot: `explore`
+
+```sh
+npm run explore -- /distros                       # GET + pretty JSON + discovered links
+npm run explore -- /people ws.op=find text=ubuntu # named operation with query params
+npm run explore -- /distros --collect --out distros.json  # page a collection, save under data/
+npm run explore -- https://api.launchpad.net/devel/ubuntu # follow an absolute link
+```
+
+`key=value` args become query params; `--collect[=N]` follows
+`next_collection_link` pages (up to `N` entries); `--out <file>` writes pretty
+JSON (relative paths land under `data/`, which is git-ignored).
+
+### Interactive: `repl`
+
+```sh
+npm run repl
+lp> pp(await get("/distros"))              # fetch + pretty-print
+lp> const u = await get("/ubuntu")         # top-level await works
+lp> links(u)                               # { self_link, ..._collection_link, ... }
+lp> console.log(x.summarize(await get("/distros")))   # compact one-line-per-entry
+lp> save(await collect("/distros"), "distros.json")   # persist under data/
+```
+
+Preloaded context: `lp` (typed client), `x` (`Explorer`), and the bound helpers
+`get`, `collect`, `links`, `pp`, `save`. Set `LP_TOKEN` for authenticated calls.
+
+Programmatic use:
+
+```ts
+import { Explorer, pp } from "research-packages-api";
+
+const x = new Explorer({ token: process.env.LP_TOKEN });
+pp(await x.get("/distros"));
+const all = await x.collect("/distros", { max: 100 });
+```
+
 ## Scripts
 
 ```sh
 npm run openapi:update   # vendor the devel spec + regenerate src/schema/devel.ts
 npm run typecheck        # tsc --noEmit
+npm run explore -- ...   # one-shot API explorer (see Exploration)
+npm run repl             # interactive exploration REPL
 npm run example          # run examples/list-distributions.ts against the live API
 ```
 

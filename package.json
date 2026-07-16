@@ -16,6 +16,8 @@
     "openapi:update-schema": "./scripts/openapi-update-schema.sh",
     "openapi:generate-types": "openapi-typescript .api-spec/launchpad-devel.yaml -o src/schema/devel.ts --root-types --root-types-no-schema-prefix --enum-values",
     "typecheck": "tsc --noEmit",
+    "explore": "node --experimental-strip-types scripts/explore.ts",
+    "repl": "node --experimental-strip-types scripts/repl.ts",
     "example": "node --experimental-strip-types examples/list-distributions.ts"
   },
   "dependencies": {
