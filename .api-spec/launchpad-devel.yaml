@@ -1,5 +1,5 @@
 # Source: https://goulinkh.github.io/launchpad-wadl-to-openapi/launchpad-devel.openapi.yaml
-# Generator: https://github.com/goulinkh/launchpad-wadl-to-openapi @ d57d33d3519591c0fb633e5fe8bf1d9d05c60ce8 (main)
+# Generator: https://github.com/goulinkh/launchpad-wadl-to-openapi @ a70e6ac12c01b3cbcdd6568435245bdb2fb1e7f7 (main)
 openapi: 3.0.3
 info:
   title: Launchpad Web Service API
@@ -16720,7 +16720,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/access_token-full"
       required:
         - start
         - entries
@@ -16770,7 +16770,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/access_token_target-full"
       required:
         - start
         - entries
@@ -16857,7 +16857,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/archive_dependency-full"
       required:
         - start
         - entries
@@ -17144,7 +17144,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/archive-full"
       required:
         - start
         - entries
@@ -17293,7 +17293,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/archive_permission-full"
       required:
         - start
         - entries
@@ -17396,7 +17396,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/archive_subscriber-full"
       required:
         - start
         - entries
@@ -17634,7 +17634,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/build-full"
       required:
         - start
         - entries
@@ -17853,7 +17853,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/binary_package_publishing_history-full"
       required:
         - start
         - entries
@@ -17932,7 +17932,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/binary_package_release_download_count-full"
       required:
         - start
         - entries
@@ -18266,7 +18266,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/branch-full"
       required:
         - start
         - entries
@@ -18492,7 +18492,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/branch_merge_proposal-full"
       required:
         - start
         - entries
@@ -18613,7 +18613,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/branch_subscription-full"
       required:
         - start
         - entries
@@ -18696,7 +18696,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/bug_activity-full"
       required:
         - start
         - entries
@@ -18800,7 +18800,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/bug_attachment-full"
       required:
         - start
         - entries
@@ -18869,7 +18869,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/bug_branch-full"
       required:
         - start
         - entries
@@ -19147,7 +19147,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/bug-full"
       required:
         - start
         - entries
@@ -19204,7 +19204,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/bug_link_target-full"
       required:
         - start
         - entries
@@ -19308,7 +19308,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/bug_nomination-full"
       required:
         - start
         - entries
@@ -19393,7 +19393,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/bug_subscription-full"
       required:
         - start
         - entries
@@ -19508,7 +19508,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/bug_subscription_filter-full"
       required:
         - start
         - entries
@@ -19581,7 +19581,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/bug_target-full"
       required:
         - start
         - entries
@@ -19833,7 +19833,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/bug_task-full"
       required:
         - start
         - entries
@@ -19921,7 +19921,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/bug_tracker_component-full"
       required:
         - start
         - entries
@@ -19997,7 +19997,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/bug_tracker_component_group-full"
       required:
         - start
         - entries
@@ -20157,7 +20157,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/bug_tracker-full"
       required:
         - start
         - entries
@@ -20327,7 +20327,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/bug_watch-full"
       required:
         - start
         - entries
@@ -20471,7 +20471,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/build_farm_job-full"
       required:
         - start
         - entries
@@ -20681,7 +20681,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/builder-full"
       required:
         - start
         - entries
@@ -20921,7 +20921,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/ci_build-full"
       required:
         - start
         - entries
@@ -21002,7 +21002,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/charm_base-full"
       required:
         - start
         - entries
@@ -21272,7 +21272,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/charm_recipe_build-full"
       required:
         - start
         - entries
@@ -21355,7 +21355,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/charm_recipe_build_request-full"
       required:
         - start
         - entries
@@ -21623,7 +21623,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/charm_recipe-full"
       required:
         - start
         - entries
@@ -21734,7 +21734,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/code_import-full"
       required:
         - start
         - entries
@@ -21873,7 +21873,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/code_review_comment-full"
       required:
         - start
         - entries
@@ -21984,7 +21984,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/code_review_vote_reference-full"
       required:
         - start
         - entries
@@ -22089,7 +22089,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/commercial_subscription-full"
       required:
         - start
         - entries
@@ -22166,7 +22166,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/country-full"
       required:
         - start
         - entries
@@ -22405,7 +22405,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/craft_recipe_build-full"
       required:
         - start
         - entries
@@ -22488,7 +22488,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/craft_recipe_build_request-full"
       required:
         - start
         - entries
@@ -22750,7 +22750,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/craft_recipe-full"
       required:
         - start
         - entries
@@ -22861,7 +22861,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/cve-full"
       required:
         - start
         - entries
@@ -23460,7 +23460,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/distribution-full"
       required:
         - start
         - entries
@@ -23704,7 +23704,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/distribution_mirror-full"
       required:
         - start
         - entries
@@ -23816,7 +23816,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/distribution_source_package-full"
       required:
         - start
         - entries
@@ -23971,7 +23971,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/distro_arch_series-full"
       required:
         - start
         - entries
@@ -24055,7 +24055,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/distro_arch_series_filter-full"
       required:
         - start
         - entries
@@ -24124,7 +24124,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/distro_series_difference_comment-full"
       required:
         - start
         - entries
@@ -24236,7 +24236,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/distro_series_difference-full"
       required:
         - start
         - entries
@@ -24625,7 +24625,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/distro_series-full"
       required:
         - start
         - entries
@@ -24692,7 +24692,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/email_address-full"
       required:
         - start
         - entries
@@ -24789,7 +24789,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/faq-full"
       required:
         - start
         - entries
@@ -24839,7 +24839,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/faq_target-full"
       required:
         - start
         - entries
@@ -24898,7 +24898,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/gpg_key-full"
       required:
         - start
         - entries
@@ -24987,7 +24987,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/git_ref-full"
       required:
         - start
         - entries
@@ -25260,7 +25260,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/git_repository-full"
       required:
         - start
         - entries
@@ -25381,7 +25381,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/git_subscription-full"
       required:
         - start
         - entries
@@ -25431,7 +25431,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/has_bugs-full"
       required:
         - start
         - entries
@@ -25481,7 +25481,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/git_target-full"
       required:
         - start
         - entries
@@ -25544,7 +25544,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/has_milestones-full"
       required:
         - start
         - entries
@@ -25594,7 +25594,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/object_with_translation_imports-full"
       required:
         - start
         - entries
@@ -25666,7 +25666,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/irc_id-full"
       required:
         - start
         - entries
@@ -25731,7 +25731,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/jabber_id-full"
       required:
         - start
         - entries
@@ -25835,7 +25835,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/language-full"
       required:
         - start
         - entries
@@ -26058,7 +26058,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/livefs_build-full"
       required:
         - start
         - entries
@@ -26209,7 +26209,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/livefs-full"
       required:
         - start
         - entries
@@ -26308,7 +26308,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/message-full"
       required:
         - start
         - entries
@@ -26375,7 +26375,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/message_revision-full"
       required:
         - start
         - entries
@@ -26498,7 +26498,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/milestone-full"
       required:
         - start
         - entries
@@ -26652,7 +26652,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/oci_project-full"
       required:
         - start
         - entries
@@ -26757,7 +26757,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/oci_project_series-full"
       required:
         - start
         - entries
@@ -26824,7 +26824,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/oci_push_rule-full"
       required:
         - start
         - entries
@@ -27087,7 +27087,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/oci_recipe_build-full"
       required:
         - start
         - entries
@@ -27170,7 +27170,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/oci_recipe_build_request-full"
       required:
         - start
         - entries
@@ -27359,7 +27359,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/oci_recipe-full"
       required:
         - start
         - entries
@@ -27414,7 +27414,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/translation_file-full"
       required:
         - start
         - entries
@@ -27572,7 +27572,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/translation_template-full"
       required:
         - start
         - entries
@@ -27733,7 +27733,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/package_upload-full"
       required:
         - start
         - entries
@@ -27824,7 +27824,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/package_upload_log-full"
       required:
         - start
         - entries
@@ -27918,7 +27918,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/packageset-full"
       required:
         - start
         - entries
@@ -28274,7 +28274,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/person-full"
       required:
         - start
         - entries
@@ -28333,7 +28333,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/pillar-full"
       required:
         - start
         - entries
@@ -28390,7 +28390,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/pillars-full"
       required:
         - start
         - entries
@@ -28518,7 +28518,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/poll-full"
       required:
         - start
         - entries
@@ -28629,7 +28629,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/preview_diff-full"
       required:
         - start
         - entries
@@ -28704,7 +28704,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/processor-full"
       required:
         - start
         - entries
@@ -29278,7 +29278,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/project-full"
       required:
         - start
         - entries
@@ -29401,7 +29401,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/project_release-full"
       required:
         - start
         - entries
@@ -29502,7 +29502,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/project_release_file-full"
       required:
         - start
         - entries
@@ -29760,7 +29760,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/project_series-full"
       required:
         - start
         - entries
@@ -30072,7 +30072,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/project_group-full"
       required:
         - start
         - entries
@@ -30195,7 +30195,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/project_group_milestone-full"
       required:
         - start
         - entries
@@ -30353,7 +30353,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/question-full"
       required:
         - start
         - entries
@@ -30487,7 +30487,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/question_message-full"
       required:
         - start
         - entries
@@ -30550,7 +30550,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/question_subscription-full"
       required:
         - start
         - entries
@@ -30600,7 +30600,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/question_target-full"
       required:
         - start
         - entries
@@ -30738,7 +30738,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/revision_status_report-full"
       required:
         - start
         - entries
@@ -30819,7 +30819,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/rock_base-full"
       required:
         - start
         - entries
@@ -31058,7 +31058,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/rock_recipe_build-full"
       required:
         - start
         - entries
@@ -31145,7 +31145,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/rock_recipe_build_request-full"
       required:
         - start
         - entries
@@ -31407,7 +31407,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/rock_recipe-full"
       required:
         - start
         - entries
@@ -31477,7 +31477,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/ssh_key-full"
       required:
         - start
         - entries
@@ -31523,7 +31523,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/service_factory-full"
       required:
         - start
         - entries
@@ -31578,7 +31578,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/sharing_service-full"
       required:
         - start
         - entries
@@ -31695,7 +31695,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/snap_base-full"
       required:
         - start
         - entries
@@ -31980,7 +31980,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/snap_build-full"
       required:
         - start
         - entries
@@ -32063,7 +32063,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/snap_build_request-full"
       required:
         - start
         - entries
@@ -32413,7 +32413,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/snap-full"
       required:
         - start
         - entries
@@ -32537,7 +32537,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/snappy_series-full"
       required:
         - start
         - entries
@@ -32615,7 +32615,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/social_account-full"
       required:
         - start
         - entries
@@ -32722,7 +32722,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/source_package-full"
       required:
         - start
         - entries
@@ -32941,7 +32941,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/source_package_publishing_history-full"
       required:
         - start
         - entries
@@ -33139,7 +33139,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/source_package_recipe_build-full"
       required:
         - start
         - entries
@@ -33299,7 +33299,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/source_package_recipe-full"
       required:
         - start
         - entries
@@ -33374,7 +33374,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/specification_branch-full"
       required:
         - start
         - entries
@@ -33700,7 +33700,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/specification-full"
       required:
         - start
         - entries
@@ -33746,7 +33746,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/specification_subscription-full"
       required:
         - start
         - entries
@@ -33809,7 +33809,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/specification_target-full"
       required:
         - start
         - entries
@@ -33888,7 +33888,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/structural_subscription-full"
       required:
         - start
         - entries
@@ -33938,7 +33938,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/structural_subscription_target-full"
       required:
         - start
         - entries
@@ -34362,7 +34362,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/team-full"
       required:
         - start
         - entries
@@ -34456,7 +34456,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/team_membership-full"
       required:
         - start
         - entries
@@ -34511,7 +34511,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/temporary_blob-full"
       required:
         - start
         - entries
@@ -34625,7 +34625,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/timeline_project_series-full"
       required:
         - start
         - entries
@@ -34691,7 +34691,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/translation_group-full"
       required:
         - start
         - entries
@@ -34816,7 +34816,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/translation_import_queue_entry-full"
       required:
         - start
         - entries
@@ -35027,7 +35027,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/vulnerability-full"
       required:
         - start
         - entries
@@ -35120,7 +35120,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/webhook_delivery-full"
       required:
         - start
         - entries
@@ -35226,7 +35226,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/webhook-full"
       required:
         - start
         - entries
@@ -35283,7 +35283,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/webhook_target-full"
       required:
         - start
         - entries
@@ -35355,7 +35355,7 @@ components:
         entries:
           type: array
           items:
-            type: object
+            $ref: "#/components/schemas/wiki_name-full"
       required:
         - start
         - entries

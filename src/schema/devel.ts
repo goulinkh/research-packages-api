@@ -9840,7 +9840,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["access_token-full"][];
         };
         "access_token_target-full": {
             /**
@@ -9873,7 +9873,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["access_token_target-full"][];
         };
         "archive_dependency-full": {
             /**
@@ -9927,7 +9927,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["archive_dependency-full"][];
         };
         "archive-full": {
             /**
@@ -10109,7 +10109,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["archive-full"][];
         };
         "archive_permission-full": {
             /**
@@ -10206,7 +10206,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["archive_permission-full"][];
         };
         "archive_subscriber-full": {
             /**
@@ -10275,7 +10275,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["archive_subscriber-full"][];
         };
         "build-full": {
             /**
@@ -10414,7 +10414,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["build-full"][];
         };
         "binary_package_publishing_history-full": {
             /**
@@ -10550,7 +10550,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["binary_package_publishing_history-full"][];
         };
         "binary_package_release_download_count-full": {
             /**
@@ -10601,7 +10601,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["binary_package_release_download_count-full"][];
         };
         "branch-full": {
             /**
@@ -10801,7 +10801,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["branch-full"][];
         };
         "branch_merge_proposal-full": {
             /**
@@ -10954,7 +10954,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["branch_merge_proposal-full"][];
         };
         "branch_subscription-full": {
             /**
@@ -11033,7 +11033,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["branch_subscription-full"][];
         };
         "bug_activity-full": {
             /**
@@ -11086,7 +11086,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["bug_activity-full"][];
         };
         "bug_attachment-full": {
             /**
@@ -11161,7 +11161,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["bug_attachment-full"][];
         };
         "bug_branch-full": {
             /**
@@ -11210,7 +11210,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["bug_branch-full"][];
         };
         "bug-full": {
             /**
@@ -11398,7 +11398,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["bug-full"][];
         };
         "bug_link_target-full": {
             /**
@@ -11436,7 +11436,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["bug_link_target-full"][];
         };
         "bug_nomination-full": {
             /**
@@ -11506,7 +11506,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["bug_nomination-full"][];
         };
         "bug_subscription-full": {
             /**
@@ -11562,7 +11562,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["bug_subscription-full"][];
         };
         "bug_subscription_filter-full": {
             /**
@@ -11635,7 +11635,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["bug_subscription_filter-full"][];
         };
         "bug_target-full": {
             /**
@@ -11681,7 +11681,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["bug_target-full"][];
         };
         "bug_task-full": {
             /**
@@ -11830,7 +11830,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["bug_task-full"][];
         };
         "bug_tracker_component-full": {
             /**
@@ -11892,7 +11892,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["bug_tracker_component-full"][];
         };
         "bug_tracker_component_group-full": {
             /**
@@ -11945,7 +11945,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["bug_tracker_component_group-full"][];
         };
         "bug_tracker-full": {
             /**
@@ -12036,7 +12036,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["bug_tracker-full"][];
         };
         "bug_watch-full": {
             /**
@@ -12135,7 +12135,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["bug_watch-full"][];
         };
         "build_farm_job-full": {
             /**
@@ -12212,7 +12212,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["build_farm_job-full"][];
         };
         "builder-full": {
             /**
@@ -12349,7 +12349,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["builder-full"][];
         };
         "ci_build-full": {
             /**
@@ -12491,7 +12491,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["ci_build-full"][];
         };
         "charm_base-full": {
             /**
@@ -12546,7 +12546,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["charm_base-full"][];
         };
         "charm_recipe_build-full": {
             /**
@@ -12705,7 +12705,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["charm_recipe_build-full"][];
         };
         "charm_recipe_build_request-full": {
             /**
@@ -12759,7 +12759,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["charm_recipe_build_request-full"][];
         };
         "charm_recipe-full": {
             /**
@@ -12939,7 +12939,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["charm_recipe-full"][];
         };
         "code_import-full": {
             /**
@@ -13008,7 +13008,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["code_import-full"][];
         };
         "code_review_comment-full": {
             /**
@@ -13094,7 +13094,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["code_review_comment-full"][];
         };
         "code_review_vote_reference-full": {
             /**
@@ -13176,7 +13176,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["code_review_vote_reference-full"][];
         };
         "commercial_subscription-full": {
             /**
@@ -13246,7 +13246,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["commercial_subscription-full"][];
         };
         "country-full": {
             /**
@@ -13291,7 +13291,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["country-full"][];
         };
         "craft_recipe_build-full": {
             /**
@@ -13434,7 +13434,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["craft_recipe_build-full"][];
         };
         "craft_recipe_build_request-full": {
             /**
@@ -13488,7 +13488,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["craft_recipe_build_request-full"][];
         };
         "craft_recipe-full": {
             /**
@@ -13663,7 +13663,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["craft_recipe-full"][];
         };
         "cve-full": {
             /**
@@ -13728,7 +13728,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["cve-full"][];
         };
         "distribution-full": {
             /**
@@ -14143,7 +14143,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["distribution-full"][];
         };
         "distribution_mirror-full": {
             /**
@@ -14287,7 +14287,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["distribution_mirror-full"][];
         };
         "distribution_source_package-full": {
             /**
@@ -14361,7 +14361,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["distribution_source_package-full"][];
         };
         "distro_arch_series-full": {
             /**
@@ -14466,7 +14466,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["distro_arch_series-full"][];
         };
         "distro_arch_series_filter-full": {
             /**
@@ -14523,7 +14523,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["distro_arch_series_filter-full"][];
         };
         "distro_series_difference_comment-full": {
             /**
@@ -14567,7 +14567,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["distro_series_difference_comment-full"][];
         };
         "distro_series_difference-full": {
             /**
@@ -14637,7 +14637,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["distro_series_difference-full"][];
         };
         "distro_series-full": {
             /**
@@ -14891,7 +14891,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["distro_series-full"][];
         };
         "email_address-full": {
             /**
@@ -14937,7 +14937,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["email_address-full"][];
         };
         "faq-full": {
             /**
@@ -14999,7 +14999,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["faq-full"][];
         };
         "faq_target-full": {
             /**
@@ -15032,7 +15032,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["faq_target-full"][];
         };
         "gpg_key-full": {
             /**
@@ -15069,7 +15069,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["gpg_key-full"][];
         };
         "git_ref-full": {
             /**
@@ -15131,7 +15131,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["git_ref-full"][];
         };
         "git_repository-full": {
             /**
@@ -15316,7 +15316,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["git_repository-full"][];
         };
         "git_subscription-full": {
             /**
@@ -15395,7 +15395,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["git_subscription-full"][];
         };
         "has_bugs-full": {
             /**
@@ -15428,7 +15428,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["has_bugs-full"][];
         };
         "git_target-full": {
             /**
@@ -15461,7 +15461,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["git_target-full"][];
         };
         "has_milestones-full": {
             /**
@@ -15504,7 +15504,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["has_milestones-full"][];
         };
         "object_with_translation_imports-full": {
             /**
@@ -15537,7 +15537,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["object_with_translation_imports-full"][];
         };
         "irc_id-full": {
             /**
@@ -15584,7 +15584,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["irc_id-full"][];
         };
         "jabber_id-full": {
             /**
@@ -15627,7 +15627,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["jabber_id-full"][];
         };
         "language-full": {
             /**
@@ -15693,7 +15693,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["language-full"][];
         };
         "livefs_build-full": {
             /**
@@ -15827,7 +15827,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["livefs_build-full"][];
         };
         "livefs-full": {
             /**
@@ -15932,7 +15932,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["livefs-full"][];
         };
         "message-full": {
             /**
@@ -15997,7 +15997,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["message-full"][];
         };
         "message_revision-full": {
             /**
@@ -16035,7 +16035,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["message_revision-full"][];
         };
         "milestone-full": {
             /**
@@ -16118,7 +16118,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["milestone-full"][];
         };
         "oci_project-full": {
             /**
@@ -16220,7 +16220,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["oci_project-full"][];
         };
         "oci_project_series-full": {
             /**
@@ -16284,7 +16284,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["oci_project_series-full"][];
         };
         "oci_push_rule-full": {
             /**
@@ -16326,7 +16326,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["oci_push_rule-full"][];
         };
         "oci_recipe_build-full": {
             /**
@@ -16481,7 +16481,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["oci_recipe_build-full"][];
         };
         "oci_recipe_build_request-full": {
             /**
@@ -16535,7 +16535,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["oci_recipe_build_request-full"][];
         };
         "oci_recipe-full": {
             /**
@@ -16660,7 +16660,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["oci_recipe-full"][];
         };
         "translation_file-full": {
             /**
@@ -16695,7 +16695,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["translation_file-full"][];
         };
         "translation_template-full": {
             /**
@@ -16792,7 +16792,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["translation_template-full"][];
         };
         "package_upload-full": {
             /**
@@ -16889,7 +16889,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["package_upload-full"][];
         };
         "package_upload_log-full": {
             /**
@@ -16946,7 +16946,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["package_upload_log-full"][];
         };
         "packageset-full": {
             /**
@@ -17006,7 +17006,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["packageset-full"][];
         };
         "person-full": {
             /**
@@ -17265,7 +17265,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["person-full"][];
         };
         "pillar-full": {
             /**
@@ -17303,7 +17303,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["pillar-full"][];
         };
         "pillars-full": {
             /**
@@ -17341,7 +17341,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["pillars-full"][];
         };
         "poll-full": {
             /**
@@ -17424,7 +17424,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["poll-full"][];
         };
         "preview_diff-full": {
             /**
@@ -17491,7 +17491,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["preview_diff-full"][];
         };
         "processor-full": {
             /**
@@ -17533,7 +17533,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["processor-full"][];
         };
         "project-full": {
             /**
@@ -17915,7 +17915,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["project-full"][];
         };
         "project_release-full": {
             /**
@@ -17999,7 +17999,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["project_release-full"][];
         };
         "project_release_file-full": {
             /**
@@ -18064,7 +18064,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["project_release_file-full"][];
         };
         "project_series-full": {
             /**
@@ -18238,7 +18238,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["project_series-full"][];
         };
         "project_group-full": {
             /**
@@ -18456,7 +18456,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["project_group-full"][];
         };
         "project_group_milestone-full": {
             /**
@@ -18539,7 +18539,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["project_group_milestone-full"][];
         };
         "question-full": {
             /**
@@ -18648,7 +18648,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["question-full"][];
         };
         "question_message-full": {
             /**
@@ -18730,7 +18730,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["question_message-full"][];
         };
         "question_subscription-full": {
             /**
@@ -18770,7 +18770,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["question_subscription-full"][];
         };
         "question_target-full": {
             /**
@@ -18803,7 +18803,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["question_target-full"][];
         };
         "revision_status_report-full": {
             /**
@@ -18888,7 +18888,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["revision_status_report-full"][];
         };
         "rock_base-full": {
             /**
@@ -18943,7 +18943,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["rock_base-full"][];
         };
         "rock_recipe_build-full": {
             /**
@@ -19086,7 +19086,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["rock_recipe_build-full"][];
         };
         "rock_recipe_build_request-full": {
             /**
@@ -19142,7 +19142,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["rock_recipe_build_request-full"][];
         };
         "rock_recipe-full": {
             /**
@@ -19317,7 +19317,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["rock_recipe-full"][];
         };
         "ssh_key-full": {
             /**
@@ -19359,7 +19359,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["ssh_key-full"][];
         };
         "service_factory-full": {
             /**
@@ -19387,7 +19387,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["service_factory-full"][];
         };
         "sharing_service-full": {
             /**
@@ -19420,7 +19420,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["sharing_service-full"][];
         };
         "snap_base-full": {
             /**
@@ -19499,7 +19499,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["snap_base-full"][];
         };
         "snap_build-full": {
             /**
@@ -19669,7 +19669,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["snap_build-full"][];
         };
         "snap_build_request-full": {
             /**
@@ -19723,7 +19723,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["snap_build_request-full"][];
         };
         "snap-full": {
             /**
@@ -19962,7 +19962,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["snap-full"][];
         };
         "snappy_series-full": {
             /**
@@ -20039,7 +20039,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["snappy_series-full"][];
         };
         "social_account-full": {
             /**
@@ -20092,7 +20092,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["social_account-full"][];
         };
         "source_package-full": {
             /**
@@ -20161,7 +20161,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["source_package-full"][];
         };
         "source_package_publishing_history-full": {
             /**
@@ -20305,7 +20305,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["source_package_publishing_history-full"][];
         };
         "source_package_recipe_build-full": {
             /**
@@ -20421,7 +20421,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["source_package_recipe_build-full"][];
         };
         "source_package_recipe-full": {
             /**
@@ -20533,7 +20533,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["source_package_recipe-full"][];
         };
         "specification_branch-full": {
             /**
@@ -20587,7 +20587,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["specification_branch-full"][];
         };
         "specification-full": {
             /**
@@ -20786,7 +20786,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["specification-full"][];
         };
         "specification_subscription-full": {
             /**
@@ -20814,7 +20814,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["specification_subscription-full"][];
         };
         "specification_target-full": {
             /**
@@ -20857,7 +20857,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["specification_target-full"][];
         };
         "structural_subscription-full": {
             /**
@@ -20909,7 +20909,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["structural_subscription-full"][];
         };
         "structural_subscription_target-full": {
             /**
@@ -20942,7 +20942,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["structural_subscription_target-full"][];
         };
         "team-full": {
             /**
@@ -21243,7 +21243,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["team-full"][];
         };
         "team_membership-full": {
             /**
@@ -21302,7 +21302,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["team_membership-full"][];
         };
         "temporary_blob-full": {
             /**
@@ -21337,7 +21337,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["temporary_blob-full"][];
         };
         "timeline_project_series-full": {
             /**
@@ -21407,7 +21407,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["timeline_project_series-full"][];
         };
         "translation_group-full": {
             /**
@@ -21449,7 +21449,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["translation_group-full"][];
         };
         "translation_import_queue_entry-full": {
             /**
@@ -21527,7 +21527,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["translation_import_queue_entry-full"][];
         };
         "vulnerability-full": {
             /**
@@ -21653,7 +21653,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["vulnerability-full"][];
         };
         "webhook_delivery-full": {
             /**
@@ -21709,7 +21709,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["webhook_delivery-full"][];
         };
         "webhook-full": {
             /**
@@ -21778,7 +21778,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["webhook-full"][];
         };
         "webhook_target-full": {
             /**
@@ -21816,7 +21816,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["webhook_target-full"][];
         };
         "wiki_name-full": {
             /**
@@ -21860,7 +21860,7 @@ export interface components {
             next_collection_link?: string;
             /** Format: uri */
             prev_collection_link?: string;
-            entries: Record<string, never>[];
+            entries: components["schemas"]["wiki_name-full"][];
         };
     };
     responses: never;

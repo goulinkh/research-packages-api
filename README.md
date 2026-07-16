@@ -66,21 +66,43 @@ bodies all come from the generated `src/schema/devel.ts`.
 ## Exploration
 
 Launchpad is a hypermedia API — resources link to one another via `*_link`
-fields. The `Explorer` (untyped, accepts arbitrary paths and absolute links) and
-two CLI entry points make poking around easy.
+fields. The `Explorer` (untyped, accepts arbitrary paths and absolute links)
+makes poking around easy.
 
-### One-shot: `explore`
+### Scratchpad: the `scratch/` folder
+
+`scratch/` is your notepad. Add as many `.ts` files as you like — each is an
+independent request flow. Save a file and the output re-prints automatically
+with colorized JSON:
 
 ```sh
-npm run explore -- /distros                       # GET + pretty JSON + discovered links
-npm run explore -- /people ws.op=find text=ubuntu # named operation with query params
-npm run explore -- /distros --collect --out distros.json  # page a collection, save under data/
-npm run explore -- https://api.launchpad.net/devel/ubuntu # follow an absolute link
+npm run scratch                    # runs scratch/main.ts (watch mode)
+npm run scratch -- scratch/people.ts   # runs another file in the folder
 ```
 
-`key=value` args become query params; `--collect[=N]` follows
-`next_collection_link` pages (up to `N` entries); `--out <file>` writes pretty
-JSON (relative paths land under `data/`, which is git-ignored).
+Each file imports the shared context from `scratch/lib.ts`:
+
+```ts
+import { lp, x, pp } from "./lib.ts";
+
+const distros = await x.get("/distros");
+console.log(x.summarize(distros));            // compact one-line-per-entry
+
+const ubuntu = await x.get<Record<string, unknown>>("/ubuntu");
+pp(x.links(ubuntu));                          // discover *_link fields to drill into
+
+const person = await x.get("/people", { "ws.op": "getByEmail", email: "you@example.com" });
+pp(person);
+
+await x.save(distros, "distros.json");        // persist under data/ (git-ignored)
+```
+
+- `lp` — typed client (autocompletes paths, params, responses)
+- `x` — `Explorer` (untyped, accepts arbitrary paths and absolute links)
+- `pp` — colorized pretty-printer
+
+Top-level `await` works. Set `LP_TOKEN` for authenticated calls. These files are
+yours — nothing in `scratch/` is load-bearing.
 
 ### Interactive: `repl`
 
@@ -111,7 +133,7 @@ const all = await x.collect("/distros", { max: 100 });
 ```sh
 npm run openapi:update   # vendor the devel spec + regenerate src/schema/devel.ts
 npm run typecheck        # tsc --noEmit
-npm run explore -- ...   # one-shot API explorer (see Exploration)
+npm run scratch          # run/watch a scratch/*.ts request flow (see Exploration)
 npm run repl             # interactive exploration REPL
 npm run example          # run examples/list-distributions.ts against the live API
 ```
