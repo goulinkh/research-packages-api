@@ -36,9 +36,27 @@ export function createLaunchpadClient(
     ...(token ? { Authorization: `OAuth ${token}` } : {}),
   };
 
-  return createClient<paths>({
+  const client = createClient<paths>({
     baseUrl,
     headers,
     ...fetchOptions,
   });
+
+  // Launchpad's named operations live at path keys like
+  // `/{distribution}?ws.op=searchSourcePackages`. openapi-fetch always joins
+  // additional query params with `?`, producing an invalid double-`?` URL
+  // (`…?ws.op=searchSourcePackages?source_match=python`). Collapse every `?`
+  // after the first into `&` so these operations accept extra query params.
+  client.use({
+    onRequest({ request }) {
+      const mark = request.url.indexOf("?");
+      if (mark === -1 || request.url.indexOf("?", mark + 1) === -1) return undefined;
+      const fixed =
+        request.url.slice(0, mark + 1) +
+        request.url.slice(mark + 1).replace(/\?/g, "&");
+      return new Request(fixed, request);
+    },
+  });
+
+  return client;
 }
