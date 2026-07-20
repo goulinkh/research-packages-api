@@ -1,5 +1,5 @@
 # Source: https://goulinkh.github.io/launchpad-wadl-to-openapi/launchpad-devel.openapi.yaml
-# Generator: https://github.com/goulinkh/launchpad-wadl-to-openapi @ 41fc40ca35c2bd580ed478b44e1bd556ec11540f (main)
+# Generator: https://github.com/goulinkh/launchpad-wadl-to-openapi @ e6cbe9006b3199f3d5ef6c8523807140dbd64c33 (main)
 openapi: 3.0.3
 info:
   title: Launchpad Web Service API
@@ -289,7 +289,10 @@ paths:
           example: urls
       responses:
         "200":
-          description: Successful response
+          description: A dictionary mapping URLs to branches. If the URL has no associated branch, the URL will map to None.
+          content:
+            application/json:
+              schema: {}
   /branches?ws.op=getByPath:
     get:
       tags:
@@ -376,6 +379,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /branches?ws.op=getMergeProposals:
     get:
       tags:
@@ -507,6 +513,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /bugs/bugtrackers:
     get:
       tags:
@@ -552,7 +561,10 @@ paths:
       operationId: builders-getBuildQueueSizes
       responses:
         "200":
-          description: Successful response
+          description: "a dict of tuples with the queue size and duration for each processor and virtualisation. For example: { 'virt': { '386': (1, datetime.timedelta(0, 60)), 'amd64': (2, datetime.timedelta(0, 30)), }, 'nonvirt':... } The tuple contains the size of the queue, as an integer, and the sum of the jobs 'estimated_duration' in queue, as a timedelta or None for empty queues."
+          content:
+            application/json:
+              schema: {}
   /builders?ws.op=getBuildersForQueue:
     get:
       tags:
@@ -638,6 +650,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /builders:
     get:
       tags:
@@ -708,6 +723,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /+charm-bases:
     get:
       tags:
@@ -879,6 +897,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /+charm-recipes:
     get:
       tags:
@@ -1108,6 +1129,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /+craft-recipes:
     get:
       tags:
@@ -1163,6 +1187,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /bugs/cve:
     get:
       tags:
@@ -1286,7 +1313,10 @@ paths:
       operationId: git_repositories-countRepositoriesForRepack
       responses:
         "200":
-          description: Successful response
+          description: The number of IGitRepository objects qualifying for a repack.
+          content:
+            application/json:
+              schema: {}
   /+git?ws.op=getRepositoryVisibilityInfo:
     get:
       tags:
@@ -1314,6 +1344,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /+git?ws.op=getDefaultRepository:
     get:
       tags:
@@ -1386,7 +1419,10 @@ paths:
             type: string
       responses:
         "200":
-          description: Successful response
+          description: A list of the worst badly packed repositories.
+          content:
+            application/json:
+              schema: {}
   /+git?ws.op=new:
     post:
       tags:
@@ -1434,6 +1470,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /+git?ws.op=setDefaultRepository:
     post:
       tags:
@@ -1464,6 +1503,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /+git?ws.op=setDefaultRepositoryForOwner:
     post:
       tags:
@@ -1501,6 +1543,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /+git:
     get:
       tags:
@@ -1625,6 +1670,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /livefses:
     get:
       tags:
@@ -1872,7 +1920,10 @@ paths:
             x-lp-resource-type: bug
       responses:
         "200":
-          description: Successful response
+          description: a list of matching bugs represented as json data
+          content:
+            application/json:
+              schema: {}
   /bugs?ws.op=createBug:
     post:
       tags:
@@ -1927,6 +1978,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /bugs:
     get:
       tags:
@@ -2077,7 +2131,10 @@ paths:
                 - distroseries
       responses:
         "200":
-          description: Successful response
+          description: a newly created IPackageset.
+          content:
+            application/json:
+              schema: {}
   /package-sets:
     get:
       tags:
@@ -2208,6 +2265,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /people?ws.op=getByOpenIDIdentifier:
     get:
       tags:
@@ -2247,6 +2307,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /people?ws.op=getSSHKeysForSSO:
     get:
       tags:
@@ -2265,6 +2328,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /people?ws.op=newTeam:
     post:
       tags:
@@ -2318,6 +2384,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /people?ws.op=getOrCreateSoftwareCenterCustomer:
     post:
       tags:
@@ -2386,6 +2455,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /people?ws.op=addSSHKeyFromSSO:
     post:
       tags:
@@ -2417,6 +2489,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /people?ws.op=deleteSSHKeyFromSSO:
     post:
       tags:
@@ -2448,6 +2523,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /people:
     get:
       tags:
@@ -2758,6 +2836,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /projects:
     get:
       tags:
@@ -2955,6 +3036,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /+rock-bases:
     get:
       tags:
@@ -3126,6 +3210,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /+rock-recipes:
     get:
       tags:
@@ -3221,6 +3308,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /+snap-bases?ws.op=setDefault:
     post:
       tags:
@@ -3246,6 +3336,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /+snap-bases:
     get:
       tags:
@@ -3554,6 +3647,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /+snaps:
     get:
       tags:
@@ -3631,6 +3727,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /+snappy-series:
     get:
       tags:
@@ -3713,6 +3812,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /specifications:
     get:
       tags:
@@ -3745,6 +3847,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /temporary-blobs:
     get:
       tags:
@@ -3911,6 +4016,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /vulnerabilities?ws.op=getExports:
     get:
       tags:
@@ -3933,6 +4041,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /vulnerabilities?ws.op=importData:
     post:
       tags:
@@ -3989,6 +4100,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /vulnerabilities?ws.op=exportData:
     post:
       tags:
@@ -4019,6 +4133,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /vulnerabilities:
     get:
       tags:
@@ -4051,6 +4168,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{access_token}:
     get:
       tags:
@@ -4139,7 +4259,10 @@ paths:
             type: string
       responses:
         "200":
-          description: Successful response
+          description: The secret for a new personal access token (Launchpad only records the hash of this secret and not the secret itself, so the caller must be careful to save this).
+          content:
+            application/json:
+              schema: {}
   /{access_token_target}:
     get:
       tags:
@@ -4588,6 +4711,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=getUploadersForPackageset:
     get:
       tags:
@@ -4742,7 +4868,12 @@ paths:
             x-lp-resource-type: distro_series
       responses:
         "200":
-          description: Successful response
+          description: True if the person is allowed to upload the source package.
+          content:
+            application/json:
+              schema:
+                type: boolean
+                nullable: true
   /{distribution}/+archive/{archive}?ws.op=getBuildCounters:
     get:
       tags:
@@ -4761,7 +4892,10 @@ paths:
             type: string
       responses:
         "200":
-          description: Successful response
+          description: a dictionary with the 4 keys specified above.
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=getBuildSummariesForSourceIds:
     get:
       tags:
@@ -4781,7 +4915,10 @@ paths:
           example: source_ids
       responses:
         "200":
-          description: Successful response
+          description: A dict consisting of the overall status summaries for the given ids that belong in the archive.
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=getArchiveDependency:
     get:
       tags:
@@ -5314,6 +5451,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=getNamedAuthToken:
     get:
       tags:
@@ -5333,7 +5473,10 @@ paths:
           example: ubuntu
       responses:
         "200":
-          description: Successful response
+          description: An ArchiveAuthToken object or a dictionary where the value of token is the secret and the value of archive_url is the externally-usable archive URL including basic auth.
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=getNamedAuthTokens:
     get:
       tags:
@@ -5352,7 +5495,10 @@ paths:
             type: string
       responses:
         "200":
-          description: Successful response
+          description: A list of ArchiveAuthToken objects or a list of dictionaries where token is the secret and archive_url is the externally-usable archive URL including basic auth.
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=newWebhook:
     post:
       tags:
@@ -5390,6 +5536,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=newPackageUploader:
     post:
       tags:
@@ -5421,7 +5570,10 @@ paths:
         - *a5
       responses:
         "200":
-          description: Successful response
+          description: An IArchivePermission which is the newly-created permission.
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=newComponentUploader:
     post:
       tags:
@@ -5453,7 +5605,10 @@ paths:
         - *a5
       responses:
         "200":
-          description: Successful response
+          description: An IArchivePermission which is the newly-created permission.
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=newQueueAdmin:
     post:
       tags:
@@ -5485,7 +5640,10 @@ paths:
         - *a5
       responses:
         "200":
-          description: Successful response
+          description: An IArchivePermission which is the newly-created permission.
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=newPackagesetUploader:
     post:
       tags:
@@ -5522,7 +5680,10 @@ paths:
         - *a5
       responses:
         "200":
-          description: Successful response
+          description: The new ArchivePermission, or the existing one if it already exists.
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=deletePackageUploader:
     post:
       tags:
@@ -5555,6 +5716,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=deleteComponentUploader:
     post:
       tags:
@@ -5587,6 +5751,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=deleteQueueAdmin:
     post:
       tags:
@@ -5619,6 +5786,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=deletePackagesetUploader:
     post:
       tags:
@@ -5656,6 +5826,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=syncSources:
     post:
       tags:
@@ -5702,6 +5875,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=syncSource:
     post:
       tags:
@@ -5750,6 +5926,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=newSubscription:
     post:
       tags:
@@ -5783,7 +5962,10 @@ paths:
         - *a5
       responses:
         "200":
-          description: Successful response
+          description: The IArchiveSubscriber that was created.
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=enableRestrictedProcessor:
     post:
       tags:
@@ -5811,6 +5993,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=setProcessors:
     post:
       tags:
@@ -5836,6 +6021,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=copyPackage:
     post:
       tags:
@@ -5910,6 +6098,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=copyPackages:
     post:
       tags:
@@ -5970,6 +6161,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=uploadCIBuild:
     post:
       tags:
@@ -6010,6 +6204,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=newPocketUploader:
     post:
       tags:
@@ -6047,7 +6244,10 @@ paths:
         - *a5
       responses:
         "200":
-          description: Successful response
+          description: An IArchivePermission which is the newly-created permission.
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=newPocketQueueAdmin:
     post:
       tags:
@@ -6090,7 +6290,10 @@ paths:
         - *a5
       responses:
         "200":
-          description: Successful response
+          description: An IArchivePermission which is the newly-created permission.
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=deletePocketUploader:
     post:
       tags:
@@ -6129,6 +6332,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=deletePocketQueueAdmin:
     post:
       tags:
@@ -6172,12 +6378,15 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=addArchiveDependency:
     post:
       tags:
         - archive
       summary: Add archive dependency
-      description: "Record an archive dependency record for the context archive. param dependency: is an IArchive object. param pocket: is an PackagePublishingPocket enum. param component: is the name of a component. If not given, the archive dependency will be tied to the component used for a corresponding source in primary archive. raise: ArchiveDependencyError if given 'dependency' does not fit the context archive. return: a IArchiveDependency object targeted to the context IArchive requiring 'dependency' IArchive."
+      description: "Record an archive dependency record for the context archive. param dependency: is an IArchive object. param pocket: is an PackagePublishingPocket enum. param component: is the name of a component. If not given, the archive dependency will be tied to the component used for a corresponding source in primary archive. param pin_priority: is an optional integer, sets the priority of the dependency. If not given the archive dependency will default to a priority of 500. raise: ArchiveDependencyError if given 'dependency' does not fit the context archive. return: a IArchiveDependency object targeted to the context IArchive requiring 'dependency' IArchive."
       operationId: archive-addArchiveDependency
       requestBody:
         required: true
@@ -6204,6 +6413,9 @@ paths:
                 component:
                   type: string
                   description: Component
+                pin_priority:
+                  type: string
+                  description: Pin priority
               required:
                 - dependency
                 - pocket
@@ -6212,7 +6424,10 @@ paths:
         - *a5
       responses:
         "200":
-          description: Successful response
+          description: a IArchiveDependency object targeted to the context IArchive requiring 'dependency' IArchive.
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=removeArchiveDependency:
     post:
       tags:
@@ -6240,6 +6455,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=newNamedAuthToken:
     post:
       tags:
@@ -6268,7 +6486,10 @@ paths:
         - *a5
       responses:
         "200":
-          description: Successful response
+          description: An ArchiveAuthToken object or a dictionary where the value of token is the secret and the value of archive_url is the externally-usable archive URL including basic auth.
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=newNamedAuthTokens:
     post:
       tags:
@@ -6294,7 +6515,10 @@ paths:
         - *a5
       responses:
         "200":
-          description: Successful response
+          description: "A list of ArchiveAuthToken objects or a dictionary of {name: {token, archive_url} where name is a token name, token is the secret and archive_url is the externally-usable archive URL including basic auth."
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=revokeNamedAuthToken:
     post:
       tags:
@@ -6321,6 +6545,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=revokeNamedAuthTokens:
     post:
       tags:
@@ -6347,6 +6574,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=removeCopyNotification:
     post:
       tags:
@@ -6372,6 +6602,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}?ws.op=markSuiteDirty:
     post:
       tags:
@@ -6411,6 +6644,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}:
     get:
       tags:
@@ -6550,6 +6786,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{archive_subscriber}:
     get:
       tags:
@@ -6647,6 +6886,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{build}?ws.op=cancelUpload:
     post:
       tags:
@@ -6659,6 +6901,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{build}?ws.op=retry:
     post:
       tags:
@@ -6671,6 +6916,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{build}?ws.op=cancel:
     post:
       tags:
@@ -6683,6 +6931,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{build}:
     get:
       tags:
@@ -6751,6 +7002,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{binary_package_publishing_history}?ws.op=getDownloadCounts:
     get:
       tags:
@@ -6803,6 +7057,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{binary_package_publishing_history}?ws.op=binaryFileUrls:
     get:
       tags:
@@ -6820,7 +7077,10 @@ paths:
             type: string
       responses:
         "200":
-          description: Successful response
+          description: A collection of URLs for this binary.
+          content:
+            application/json:
+              schema: {}
   /{binary_package_publishing_history}?ws.op=requestDeletion:
     post:
       tags:
@@ -6843,6 +7103,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{binary_package_publishing_history}?ws.op=changeOverride:
     post:
       tags:
@@ -7036,6 +7299,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{branch}?ws.op=isPersonTrustedReviewer:
     get:
       tags:
@@ -7057,6 +7323,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{branch}?ws.op=canBeDeleted:
     get:
       tags:
@@ -7069,6 +7338,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{branch}?ws.op=getSubscription:
     get:
       tags:
@@ -7130,6 +7402,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{branch}?ws.op=setOwner:
     post:
       tags:
@@ -7157,6 +7432,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{branch}?ws.op=setTarget:
     post:
       tags:
@@ -7186,6 +7464,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{branch}?ws.op=linkBug:
     post:
       tags:
@@ -7212,6 +7493,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{branch}?ws.op=unlinkBug:
     post:
       tags:
@@ -7238,6 +7522,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{branch}?ws.op=linkSpecification:
     post:
       tags:
@@ -7264,6 +7551,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{branch}?ws.op=unlinkSpecification:
     post:
       tags:
@@ -7290,6 +7580,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{branch}?ws.op=createMergeProposal:
     post:
       tags:
@@ -7333,6 +7626,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{branch}?ws.op=subscribe:
     post:
       tags:
@@ -7421,6 +7717,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{branch}?ws.op=requestMirror:
     post:
       tags:
@@ -7433,6 +7732,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{branch}?ws.op=transitionToInformationType:
     post:
       tags:
@@ -7462,6 +7764,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{branch}?ws.op=unscan:
     post:
       tags:
@@ -7487,6 +7792,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{branch}?ws.op=rescan:
     post:
       tags:
@@ -7499,6 +7807,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{branch}:
     get:
       tags:
@@ -7607,6 +7918,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{branch_merge_proposal}?ws.op=getRelatedBugTasks:
     get:
       tags:
@@ -7635,6 +7949,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{branch_merge_proposal}?ws.op=getMergeCriteria:
     get:
       tags:
@@ -7646,7 +7963,10 @@ paths:
         - *a12
       responses:
         "200":
-          description: Successful response
+          description: A dictionary containing the status of merge criteria checks. The 'can_be_merged' key indicates if all criteria passed, and the 'criteria' key contains details about each check."
+          content:
+            application/json:
+              schema: {}
   /{branch_merge_proposal}?ws.op=getInlineComments:
     get:
       tags:
@@ -7665,6 +7985,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{branch_merge_proposal}?ws.op=createComment:
     post:
       tags:
@@ -7707,6 +8030,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{branch_merge_proposal}?ws.op=setStatus:
     post:
       tags:
@@ -7744,6 +8070,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{branch_merge_proposal}?ws.op=nominateReviewer:
     post:
       tags:
@@ -7803,6 +8132,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{branch_merge_proposal}?ws.op=unlinkBug:
     post:
       tags:
@@ -7829,6 +8161,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{branch_merge_proposal}?ws.op=saveDraftInlineComment:
     post:
       tags:
@@ -7857,6 +8192,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{branch_merge_proposal}?ws.op=scheduleDiffUpdates:
     post:
       tags:
@@ -7869,6 +8207,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{branch_merge_proposal}?ws.op=requestMerge:
     post:
       tags:
@@ -7894,6 +8235,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{branch_merge_proposal}?ws.op=merge:
     post:
       tags:
@@ -7919,6 +8263,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{branch_merge_proposal}?ws.op=setCommentVisibility:
     post:
       tags:
@@ -7949,6 +8296,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{branch_merge_proposal}:
     get:
       tags:
@@ -8017,6 +8367,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{branch_subscription}:
     get:
       tags:
@@ -8141,6 +8494,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{bug_attachment}:
     get:
       tags:
@@ -8275,6 +8631,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /bugs/{id}?ws.op=getNominationFor:
     get:
       tags:
@@ -8348,6 +8707,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /bugs/{id}?ws.op=getVisibleLinkedBranches:
     get:
       tags:
@@ -8360,6 +8722,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /bugs/{id}?ws.op=getVisibleLinkedMergeProposals:
     get:
       tags:
@@ -8372,6 +8737,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /bugs/{id}?ws.op=linkBranch:
     post:
       tags:
@@ -8398,6 +8766,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /bugs/{id}?ws.op=unlinkBranch:
     post:
       tags:
@@ -8424,6 +8795,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /bugs/{id}?ws.op=addNomination:
     post:
       tags:
@@ -8451,6 +8825,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /bugs/{id}?ws.op=addTask:
     post:
       tags:
@@ -8478,6 +8855,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /bugs/{id}?ws.op=linkCVE:
     post:
       tags:
@@ -8505,6 +8885,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /bugs/{id}?ws.op=unlinkCVE:
     post:
       tags:
@@ -8532,6 +8915,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /bugs/{id}?ws.op=addAttachment:
     post:
       tags:
@@ -8582,6 +8968,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /bugs/{id}?ws.op=addWatch:
     post:
       tags:
@@ -8614,6 +9003,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /bugs/{id}?ws.op=markUserAffected:
     post:
       tags:
@@ -8636,6 +9028,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /bugs/{id}?ws.op=setCommentVisibility:
     post:
       tags:
@@ -8666,6 +9061,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /bugs/{id}?ws.op=newMessage:
     post:
       tags:
@@ -8697,6 +9095,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /bugs/{id}?ws.op=subscribe:
     post:
       tags:
@@ -8730,7 +9131,10 @@ paths:
         - *a17
       responses:
         "200":
-          description: Successful response
+          description: an IBugSubscription.
+          content:
+            application/json:
+              schema: {}
   /bugs/{id}?ws.op=unsubscribe:
     post:
       tags:
@@ -8755,6 +9159,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /bugs/{id}?ws.op=unsubscribeFromDupes:
     post:
       tags:
@@ -8779,6 +9186,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /bugs/{id}?ws.op=isUserAffected:
     post:
       tags:
@@ -8791,6 +9201,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /bugs/{id}?ws.op=lock:
     post:
       tags:
@@ -8818,6 +9231,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /bugs/{id}?ws.op=unlock:
     post:
       tags:
@@ -8830,6 +9246,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /bugs/{id}?ws.op=linkMergeProposal:
     post:
       tags:
@@ -8857,6 +9276,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /bugs/{id}?ws.op=unlinkMergeProposal:
     post:
       tags:
@@ -8884,6 +9306,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /bugs/{id}?ws.op=transitionToInformationType:
     post:
       tags:
@@ -8916,6 +9341,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /bugs/{id}?ws.op=mute:
     post:
       tags:
@@ -8940,6 +9368,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /bugs/{id}?ws.op=unmute:
     post:
       tags:
@@ -8964,6 +9395,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /bugs/{id}:
     get:
       tags:
@@ -9088,6 +9522,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{bug_nomination}?ws.op=approve:
     post:
       tags:
@@ -9100,6 +9537,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{bug_nomination}?ws.op=decline:
     post:
       tags:
@@ -9112,6 +9552,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{bug_nomination}:
     get:
       tags:
@@ -9180,6 +9623,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{bug_subscription}:
     get:
       tags:
@@ -9248,6 +9694,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{bug_subscription_filter}?ws.op=muted:
     get:
       tags:
@@ -9260,6 +9709,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{bug_subscription_filter}?ws.op=mute:
     post:
       tags:
@@ -9272,6 +9724,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{bug_subscription_filter}?ws.op=unmute:
     post:
       tags:
@@ -9284,6 +9739,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{bug_subscription_filter}:
     get:
       tags:
@@ -9653,6 +10111,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{bug_task}:
     get:
       tags:
@@ -9801,6 +10262,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{bug_tracker_component_group}:
     get:
       tags:
@@ -10092,6 +10556,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{build_farm_job}?ws.op=cancelUpload:
     post:
       tags:
@@ -10104,6 +10571,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{build_farm_job}?ws.op=retry:
     post:
       tags:
@@ -10116,6 +10586,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{build_farm_job}?ws.op=cancel:
     post:
       tags:
@@ -10128,6 +10601,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{build_farm_job}:
     get:
       tags:
@@ -10304,7 +10780,10 @@ paths:
             type: string
       responses:
         "200":
-          description: Successful response
+          description: A collection of URLs for this build.
+          content:
+            application/json:
+              schema: {}
   /{ci_build}?ws.op=rescore:
     post:
       tags:
@@ -10330,6 +10809,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{ci_build}?ws.op=cancelUpload:
     post:
       tags:
@@ -10342,6 +10824,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{ci_build}?ws.op=retry:
     post:
       tags:
@@ -10354,6 +10839,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{ci_build}?ws.op=cancel:
     post:
       tags:
@@ -10366,6 +10854,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{ci_build}:
     get:
       tags:
@@ -10446,6 +10937,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{charm_base}:
     get:
       tags:
@@ -10524,7 +11018,10 @@ paths:
             type: string
       responses:
         "200":
-          description: Successful response
+          description: A collection of URLs for this build.
+          content:
+            application/json:
+              schema: {}
   /{charm_recipe_build}?ws.op=rescore:
     post:
       tags:
@@ -10550,6 +11047,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{charm_recipe_build}?ws.op=cancelUpload:
     post:
       tags:
@@ -10562,6 +11062,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{charm_recipe_build}?ws.op=retry:
     post:
       tags:
@@ -10574,6 +11077,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{charm_recipe_build}?ws.op=cancel:
     post:
       tags:
@@ -10586,6 +11092,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{charm_recipe_build}?ws.op=scheduleStoreUpload:
     post:
       tags:
@@ -10598,6 +11107,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{charm_recipe_build}:
     get:
       tags:
@@ -10746,6 +11258,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{charm_recipe}?ws.op=beginAuthorization:
     post:
       tags:
@@ -10757,7 +11272,10 @@ paths:
         - *a34
       responses:
         "200":
-          description: Successful response
+          description: The serialized macaroon returned by the store. The caller should acquire a discharge macaroon for this caveat from Candid and then call completeAuthorization.
+          content:
+            application/json:
+              schema: {}
   /{charm_recipe}?ws.op=completeAuthorization:
     post:
       tags:
@@ -10783,6 +11301,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{charm_recipe}?ws.op=requestBuilds:
     post:
       tags:
@@ -10807,7 +11328,10 @@ paths:
         - *a34
       responses:
         "200":
-          description: Successful response
+          description: An ICharmRecipeBuildRequest.
+          content:
+            application/json:
+              schema: {}
   /{charm_recipe}:
     get:
       tags:
@@ -10886,7 +11410,10 @@ paths:
             type: string
       responses:
         "200":
-          description: Successful response
+          description: None
+          content:
+            application/json:
+              schema: {}
   /{code_import}:
     get:
       tags:
@@ -10968,6 +11495,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{code_review_comment}?ws.op=deleteContent:
     post:
       tags:
@@ -10980,6 +11510,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{code_review_comment}:
     get:
       tags:
@@ -11048,6 +11581,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{code_review_vote_reference}?ws.op=reassignReview:
     post:
       tags:
@@ -11075,6 +11611,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{code_review_vote_reference}:
     get:
       tags:
@@ -11265,7 +11804,10 @@ paths:
             type: string
       responses:
         "200":
-          description: Successful response
+          description: A collection of URLs for this build.
+          content:
+            application/json:
+              schema: {}
   /{craft_recipe_build}?ws.op=rescore:
     post:
       tags:
@@ -11291,6 +11833,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{craft_recipe_build}?ws.op=cancelUpload:
     post:
       tags:
@@ -11303,6 +11848,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{craft_recipe_build}?ws.op=retry:
     post:
       tags:
@@ -11315,6 +11863,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{craft_recipe_build}?ws.op=cancel:
     post:
       tags:
@@ -11327,6 +11878,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{craft_recipe_build}:
     get:
       tags:
@@ -11463,7 +12017,10 @@ paths:
             type: string
       responses:
         "200":
-          description: Successful response
+          description: An ICraftRecipeBuildRequest.
+          content:
+            application/json:
+              schema: {}
   /{craft_recipe}:
     get:
       tags:
@@ -11641,6 +12198,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}?ws.op=searchQuestions:
     get:
       tags:
@@ -11722,6 +12282,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}?ws.op=findSimilarQuestions:
     get:
       tags:
@@ -11806,6 +12369,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}?ws.op=getSpecification:
     get:
       tags:
@@ -12342,7 +12908,10 @@ paths:
           example: end_date
       responses:
         "200":
-          description: Successful response
+          description: A set of OOPS id's - strings of the form 'OOPS-w+'.
+          content:
+            application/json:
+              schema: {}
   /{distribution}?ws.op=getBranchTips:
     get:
       tags:
@@ -12361,6 +12930,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}?ws.op=getBestMirrorsForCountry:
     get:
       tags:
@@ -12464,7 +13036,10 @@ paths:
         - *a44
       responses:
         "200":
-          description: Successful response
+          description: The new bug subscription.
+          content:
+            application/json:
+              schema: {}
   /{distribution}?ws.op=addBugSubscriptionFilter:
     post:
       tags:
@@ -12488,7 +13063,10 @@ paths:
         - *a44
       responses:
         "200":
-          description: Successful response
+          description: The new bug subscription filter.
+          content:
+            application/json:
+              schema: {}
   /{distribution}?ws.op=removeBugSubscription:
     post:
       tags:
@@ -12513,6 +13091,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}?ws.op=addAnswerContact:
     post:
       tags:
@@ -12539,7 +13120,12 @@ paths:
         - *a44
       responses:
         "200":
-          description: Successful response
+          description: True if the person was added, False if the person already is an answer contact.
+          content:
+            application/json:
+              schema:
+                type: boolean
+                nullable: true
   /{distribution}?ws.op=removeAnswerContact:
     post:
       tags:
@@ -12566,7 +13152,12 @@ paths:
         - *a44
       responses:
         "200":
-          description: Successful response
+          description: True if the person was removed, False if the person wasn't an answer contact.
+          content:
+            application/json:
+              schema:
+                type: boolean
+                nullable: true
   /{distribution}?ws.op=newWebhook:
     post:
       tags:
@@ -12603,6 +13194,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}?ws.op=addOfficialBugTag:
     post:
       tags:
@@ -12628,6 +13222,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}?ws.op=removeOfficialBugTag:
     post:
       tags:
@@ -12653,6 +13250,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}?ws.op=newOCIProject:
     post:
       tags:
@@ -12681,6 +13281,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}?ws.op=newVulnerability:
     post:
       tags:
@@ -12761,6 +13364,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}?ws.op=setOCICredentials:
     post:
       tags:
@@ -12795,6 +13401,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}?ws.op=deleteOCICredentials:
     post:
       tags:
@@ -12807,6 +13416,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}:
     get:
       tags:
@@ -12875,6 +13487,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution_mirror}?ws.op=getOverallFreshness:
     get:
       tags:
@@ -12887,6 +13502,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution_mirror}?ws.op=isOfficial:
     get:
       tags:
@@ -12899,6 +13517,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution_mirror}:
     get:
       tags:
@@ -13046,6 +13667,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+source/{source}?ws.op=findSimilarQuestions:
     get:
       tags:
@@ -13134,6 +13758,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+source/{source}?ws.op=getSubscriptions:
     get:
       tags:
@@ -13189,6 +13816,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+source/{source}?ws.op=searchTasks:
     get:
       tags:
@@ -13479,7 +14109,12 @@ paths:
         - *a47
       responses:
         "200":
-          description: Successful response
+          description: True if the person was added, False if the person already is an answer contact.
+          content:
+            application/json:
+              schema:
+                type: boolean
+                nullable: true
   /{distribution}/+source/{source}?ws.op=removeAnswerContact:
     post:
       tags:
@@ -13507,7 +14142,12 @@ paths:
         - *a47
       responses:
         "200":
-          description: Successful response
+          description: True if the person was removed, False if the person wasn't an answer contact.
+          content:
+            application/json:
+              schema:
+                type: boolean
+                nullable: true
   /{distribution}/+source/{source}?ws.op=addBugSubscription:
     post:
       tags:
@@ -13532,7 +14172,10 @@ paths:
         - *a47
       responses:
         "200":
-          description: Successful response
+          description: The new bug subscription.
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+source/{source}?ws.op=addBugSubscriptionFilter:
     post:
       tags:
@@ -13557,7 +14200,10 @@ paths:
         - *a47
       responses:
         "200":
-          description: Successful response
+          description: The new bug subscription filter.
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+source/{source}?ws.op=removeBugSubscription:
     post:
       tags:
@@ -13583,6 +14229,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+source/{source}?ws.op=newWebhook:
     post:
       tags:
@@ -13620,6 +14269,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+source/{source}?ws.op=newCodeImport:
     post:
       tags:
@@ -13671,6 +14323,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+source/{source}:
     get:
       tags:
@@ -13833,6 +14488,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/{series}/{arch}?ws.op=getChrootHash:
     get:
       tags:
@@ -13868,6 +14526,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/{series}/{arch}?ws.op=getSourceFilter:
     get:
       tags:
@@ -13933,6 +14594,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/{series}/{arch}?ws.op=setChrootFromBuild:
     post:
       tags:
@@ -13980,6 +14644,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/{series}/{arch}?ws.op=removeChroot:
     post:
       tags:
@@ -14014,6 +14681,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/{series}/{arch}?ws.op=setSourceFilter:
     post:
       tags:
@@ -14051,6 +14721,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/{series}/{arch}?ws.op=removeSourceFilter:
     post:
       tags:
@@ -14065,6 +14738,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/{series}/{arch}:
     get:
       tags:
@@ -14263,7 +14939,10 @@ paths:
             type: string
       responses:
         "200":
-          description: Successful response
+          description: The created DistroSeriesDifferenceComment object.
+          content:
+            application/json:
+              schema: {}
   /{distro_series_difference}?ws.op=unblocklist:
     post:
       tags:
@@ -14285,7 +14964,10 @@ paths:
         - *a53
       responses:
         "200":
-          description: Successful response
+          description: The created DistroSeriesDifferenceComment object.
+          content:
+            application/json:
+              schema: {}
   /{distro_series_difference}?ws.op=addComment:
     post:
       tags:
@@ -14311,6 +14993,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distro_series_difference}?ws.op=requestPackageDiffs:
     post:
       tags:
@@ -14323,6 +15008,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distro_series_difference}:
     get:
       tags:
@@ -14442,6 +15130,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/{series}?ws.op=getTranslationImportQueueEntries:
     get:
       tags:
@@ -15055,6 +15746,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/{series}?ws.op=addBugSubscription:
     post:
       tags:
@@ -15079,7 +15773,10 @@ paths:
         - *a55
       responses:
         "200":
-          description: Successful response
+          description: The new bug subscription.
+          content:
+            application/json:
+              schema: {}
   /{distribution}/{series}?ws.op=addBugSubscriptionFilter:
     post:
       tags:
@@ -15104,7 +15801,10 @@ paths:
         - *a55
       responses:
         "200":
-          description: Successful response
+          description: The new bug subscription filter.
+          content:
+            application/json:
+              schema: {}
   /{distribution}/{series}?ws.op=removeBugSubscription:
     post:
       tags:
@@ -15130,6 +15830,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/{series}?ws.op=newMilestone:
     post:
       tags:
@@ -15165,6 +15868,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/{series}?ws.op=initDerivedDistroSeries:
     post:
       tags:
@@ -15212,6 +15918,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/{series}:
     get:
       tags:
@@ -15543,6 +16252,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{owner}/{project}/+git/{repository}/+ref/{ref}?ws.op=checkPermissions:
     get:
       tags:
@@ -15566,7 +16278,10 @@ paths:
           example: ~launchpad
       responses:
         "200":
-          description: Successful response
+          description: A list of zero or more of "create", "push", and "force-push", indicating the requested person's effective permissions on this reference.
+          content:
+            application/json:
+              schema: {}
   /{owner}/{project}/+git/{repository}/+ref/{ref}?ws.op=getMergeProposals:
     get:
       tags:
@@ -15625,6 +16340,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{owner}/{project}/+git/{repository}/+ref/{ref}?ws.op=createMergeProposal:
     post:
       tags:
@@ -15671,6 +16389,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{owner}/{project}/+git/{repository}/+ref/{ref}:
     get:
       tags:
@@ -15783,6 +16504,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{owner}/{project}/+git/{repository}?ws.op=checkRefPermissions:
     get:
       tags:
@@ -15812,7 +16536,10 @@ paths:
           example: paths
       responses:
         "200":
-          description: Successful response
+          description: A dict mapping reference paths to lists of zero or more of "create", "push", and "force-push", indicating the requested person's effective permissions on each of the requested references.
+          content:
+            application/json:
+              schema: {}
   /{owner}/{project}/+git/{repository}?ws.op=canBeDeleted:
     get:
       tags:
@@ -15827,6 +16554,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{owner}/{project}/+git/{repository}?ws.op=isPersonTrustedReviewer:
     get:
       tags:
@@ -15850,6 +16580,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{owner}/{project}/+git/{repository}?ws.op=getRefByPath:
     get:
       tags:
@@ -15901,7 +16634,10 @@ paths:
             type: string
       responses:
         "200":
-          description: Successful response
+          description: A dict containing commit metadata for the requested commit, parent metadata for its first parent, and patch containing the unified diff. The commit metadata is formatted as by getCommits , and parent is None if it could not be determined.
+          content:
+            application/json:
+              schema: {}
   /{owner}/{project}/+git/{repository}?ws.op=getSubscription:
     get:
       tags:
@@ -16021,6 +16757,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{owner}/{project}/+git/{repository}?ws.op=issueAccessToken:
     post:
       tags:
@@ -16050,7 +16789,10 @@ paths:
         - *a66
       responses:
         "200":
-          description: Successful response
+          description: If description and scopes are both given, the secret for a new personal access token (Launchpad only records the hash of this secret and not the secret itself, so the caller must be careful to save this; personal access tokens are in development and may not entirely work yet). Otherwise, a serialised macaroon.
+          content:
+            application/json:
+              schema: {}
   /{owner}/{project}/+git/{repository}?ws.op=repackRepository:
     post:
       tags:
@@ -16065,6 +16807,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{owner}/{project}/+git/{repository}?ws.op=collectGarbage:
     post:
       tags:
@@ -16079,6 +16824,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{owner}/{project}/+git/{repository}?ws.op=setRules:
     post:
       tags:
@@ -16106,6 +16854,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{owner}/{project}/+git/{repository}?ws.op=newStatusReport:
     post:
       tags:
@@ -16154,6 +16905,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{owner}/{project}/+git/{repository}?ws.op=rescan:
     post:
       tags:
@@ -16168,6 +16922,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{owner}/{project}/+git/{repository}?ws.op=subscribe:
     post:
       tags:
@@ -16260,6 +17017,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{owner}/{project}/+git/{repository}?ws.op=fork:
     post:
       tags:
@@ -16380,6 +17140,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{git_subscription}:
     get:
       tags:
@@ -17085,7 +17848,10 @@ paths:
             type: string
       responses:
         "200":
-          description: Successful response
+          description: A collection of URLs for this build.
+          content:
+            application/json:
+              schema: {}
   /{livefs_build}?ws.op=rescore:
     post:
       tags:
@@ -17111,6 +17877,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{livefs_build}?ws.op=cancelUpload:
     post:
       tags:
@@ -17123,6 +17892,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{livefs_build}?ws.op=retry:
     post:
       tags:
@@ -17135,6 +17907,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{livefs_build}?ws.op=cancel:
     post:
       tags:
@@ -17147,6 +17922,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{livefs_build}:
     get:
       tags:
@@ -17239,6 +18017,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{livefs}?ws.op=requestBuild:
     post:
       tags:
@@ -17289,7 +18070,10 @@ paths:
         - *a76
       responses:
         "200":
-          description: Successful response
+          description: ILiveFSBuild.
+          content:
+            application/json:
+              schema: {}
   /{livefs}:
     get:
       tags:
@@ -17369,6 +18153,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{message}?ws.op=editContent:
     post:
       tags:
@@ -17394,6 +18181,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{message}?ws.op=deleteContent:
     post:
       tags:
@@ -17406,6 +18196,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{message}:
     get:
       tags:
@@ -17474,6 +18267,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{message_revision}:
     get:
       tags:
@@ -17582,6 +18378,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{milestone}?ws.op=searchTasks:
     get:
       tags:
@@ -17804,6 +18603,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{milestone}?ws.op=addBugSubscription:
     post:
       tags:
@@ -17827,7 +18629,10 @@ paths:
         - *a79
       responses:
         "200":
-          description: Successful response
+          description: The new bug subscription.
+          content:
+            application/json:
+              schema: {}
   /{milestone}?ws.op=addBugSubscriptionFilter:
     post:
       tags:
@@ -17851,7 +18656,10 @@ paths:
         - *a79
       responses:
         "200":
-          description: Successful response
+          description: The new bug subscription filter.
+          content:
+            application/json:
+              schema: {}
   /{milestone}?ws.op=removeBugSubscription:
     post:
       tags:
@@ -17876,6 +18684,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{milestone}?ws.op=createProductRelease:
     post:
       tags:
@@ -17907,6 +18718,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{milestone}?ws.op=setTags:
     post:
       tags:
@@ -17932,6 +18746,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{milestone}:
     get:
       tags:
@@ -18261,6 +19078,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{oci_project}?ws.op=addBugSubscription:
     post:
       tags:
@@ -18284,7 +19104,10 @@ paths:
         - *a80
       responses:
         "200":
-          description: Successful response
+          description: The new bug subscription.
+          content:
+            application/json:
+              schema: {}
   /{oci_project}?ws.op=addBugSubscriptionFilter:
     post:
       tags:
@@ -18308,7 +19131,10 @@ paths:
         - *a80
       responses:
         "200":
-          description: Successful response
+          description: The new bug subscription filter.
+          content:
+            application/json:
+              schema: {}
   /{oci_project}?ws.op=removeBugSubscription:
     post:
       tags:
@@ -18333,6 +19159,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{oci_project}?ws.op=newRecipe:
     post:
       tags:
@@ -18386,6 +19215,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{oci_project}?ws.op=setOfficialRecipeStatus:
     post:
       tags:
@@ -18418,6 +19250,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{oci_project}:
     get:
       tags:
@@ -18619,7 +19454,10 @@ paths:
             type: string
       responses:
         "200":
-          description: Successful response
+          description: A collection of URLs for this build.
+          content:
+            application/json:
+              schema: {}
   /{oci_recipe_build}?ws.op=rescore:
     post:
       tags:
@@ -18645,6 +19483,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{oci_recipe_build}?ws.op=cancelUpload:
     post:
       tags:
@@ -18657,6 +19498,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{oci_recipe_build}?ws.op=retry:
     post:
       tags:
@@ -18669,6 +19513,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{oci_recipe_build}?ws.op=cancel:
     post:
       tags:
@@ -18681,6 +19528,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{oci_recipe_build}?ws.op=scheduleRegistryUpload:
     post:
       tags:
@@ -18693,6 +19543,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{oci_recipe_build}:
     get:
       tags:
@@ -18841,6 +19694,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{oci_recipe}?ws.op=newPushRule:
     post:
       tags:
@@ -18881,6 +19737,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{oci_recipe}?ws.op=setProcessors:
     post:
       tags:
@@ -18905,6 +19764,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{oci_recipe}?ws.op=requestBuilds:
     post:
       tags:
@@ -18916,7 +19778,10 @@ paths:
         - *a85
       responses:
         "200":
-          description: Successful response
+          description: A IOCIRecipeBuildRequest instance.
+          content:
+            application/json:
+              schema: {}
   /{oci_recipe}:
     get:
       tags:
@@ -19096,7 +19961,10 @@ paths:
             type: string
       responses:
         "200":
-          description: Successful response
+          description: A collection of URLs for this upload.
+          content:
+            application/json:
+              schema: {}
   /{package_upload}?ws.op=binaryFileUrls:
     get:
       tags:
@@ -19108,7 +19976,10 @@ paths:
         - *a88
       responses:
         "200":
-          description: Successful response
+          description: A collection of URLs for this upload.
+          content:
+            application/json:
+              schema: {}
   /{package_upload}?ws.op=customFileUrls:
     get:
       tags:
@@ -19120,7 +19991,10 @@ paths:
         - *a88
       responses:
         "200":
-          description: Successful response
+          description: A collection of URLs for this upload.
+          content:
+            application/json:
+              schema: {}
   /{package_upload}?ws.op=getBinaryProperties:
     get:
       tags:
@@ -19132,7 +20006,10 @@ paths:
         - *a88
       responses:
         "200":
-          description: Successful response
+          description: A list of dictionaries, each containing the properties of a single binary.
+          content:
+            application/json:
+              schema: {}
   /{package_upload}?ws.op=acceptFromQueue:
     post:
       tags:
@@ -19145,6 +20022,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{package_upload}?ws.op=rejectFromQueue:
     post:
       tags:
@@ -19167,6 +20047,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{package_upload}?ws.op=overrideSource:
     post:
       tags:
@@ -19191,7 +20074,12 @@ paths:
         - *a88
       responses:
         "200":
-          description: Successful response
+          description: True if the source was overridden.
+          content:
+            application/json:
+              schema:
+                type: boolean
+                nullable: true
   /{package_upload}?ws.op=overrideBinaries:
     post:
       tags:
@@ -19216,7 +20104,12 @@ paths:
         - *a88
       responses:
         "200":
-          description: Successful response
+          description: True if any binaries were overridden.
+          content:
+            application/json:
+              schema:
+                type: boolean
+                nullable: true
   /{package_upload}:
     get:
       tags:
@@ -19408,7 +20301,10 @@ paths:
             type: string
       responses:
         "200":
-          description: Successful response
+          description: A (potentially empty) sequence of string source package names.
+          content:
+            application/json:
+              schema: {}
   /package-sets/{distribution}/{series}/{packageset}?ws.op=getSourcesSharedBy:
     get:
       tags:
@@ -19436,7 +20332,10 @@ paths:
             type: string
       responses:
         "200":
-          description: Successful response
+          description: A (potentially empty) sequence of string source package names.
+          content:
+            application/json:
+              schema: {}
   /package-sets/{distribution}/{series}/{packageset}?ws.op=getSourcesNotSharedBy:
     get:
       tags:
@@ -19464,7 +20363,10 @@ paths:
             type: string
       responses:
         "200":
-          description: Successful response
+          description: A (potentially empty) sequence of string source package names.
+          content:
+            application/json:
+              schema: {}
   /package-sets/{distribution}/{series}/{packageset}?ws.op=relatedSets:
     get:
       tags:
@@ -19510,6 +20412,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /package-sets/{distribution}/{series}/{packageset}?ws.op=removeSources:
     post:
       tags:
@@ -19537,6 +20442,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /package-sets/{distribution}/{series}/{packageset}?ws.op=addSubsets:
     post:
       tags:
@@ -19564,6 +20472,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /package-sets/{distribution}/{series}/{packageset}?ws.op=removeSubsets:
     post:
       tags:
@@ -19591,6 +20502,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /package-sets/{distribution}/{series}/{packageset}:
     get:
       tags:
@@ -20006,6 +20920,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /people/+me?ws.op=getRecipe:
     get:
       tags:
@@ -20037,6 +20954,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /people/+me?ws.op=getBugSubscriberPackages:
     get:
       tags:
@@ -20288,6 +21208,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /people/+me?ws.op=join:
     post:
       tags:
@@ -20313,6 +21236,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /people/+me?ws.op=leave:
     post:
       tags:
@@ -20338,6 +21264,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /people/+me?ws.op=addMember:
     post:
       tags:
@@ -20376,7 +21305,10 @@ paths:
                 - person
       responses:
         "200":
-          description: Successful response
+          description: A tuple containing a boolean indicating when the membership status changed and the current TeamMembershipStatus. This depends on the desired status passed as an argument, the membership policy and the user's privileges.
+          content:
+            application/json:
+              schema: {}
   /people/+me?ws.op=acceptInvitationToBeMemberOf:
     post:
       tags:
@@ -20406,6 +21338,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /people/+me?ws.op=declineInvitationToBeMemberOf:
     post:
       tags:
@@ -20435,6 +21370,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /people/+me?ws.op=retractTeamMembership:
     post:
       tags:
@@ -20462,6 +21400,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /people/+me?ws.op=createPPA:
     post:
       tags:
@@ -20492,7 +21433,10 @@ paths:
                   type: string
       responses:
         "200":
-          description: Successful response
+          description: a PPA IArchive record.
+          content:
+            application/json:
+              schema: {}
   /people/+me?ws.op=createRecipe:
     post:
       tags:
@@ -20532,7 +21476,10 @@ paths:
                 - recipe_text
       responses:
         "200":
-          description: Successful response
+          description: a SourcePackageRecipe.
+          content:
+            application/json:
+              schema: {}
   /people/+me?ws.op=getArchiveSubscriptionURL:
     post:
       tags:
@@ -20557,6 +21504,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /people/+me?ws.op=setAccountStatus:
     post:
       tags:
@@ -20593,6 +21543,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /people/+me?ws.op=addLanguage:
     post:
       tags:
@@ -20617,6 +21570,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /people/+me?ws.op=removeLanguage:
     post:
       tags:
@@ -20641,6 +21597,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /people/+me:
     get:
       tags:
@@ -21041,6 +22000,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{project}?ws.op=getSpecification:
     get:
       tags:
@@ -21145,6 +22107,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{project}?ws.op=findSimilarQuestions:
     get:
       tags:
@@ -21229,6 +22194,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{project}?ws.op=getTranslationImportQueueEntries:
     get:
       tags:
@@ -21612,6 +22580,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{project}?ws.op=findReferencedOOPS:
     get:
       tags:
@@ -21637,7 +22608,10 @@ paths:
           example: end_date
       responses:
         "200":
-          description: Successful response
+          description: A set of OOPS id's - strings of the form 'OOPS-w+'.
+          content:
+            application/json:
+              schema: {}
   /{project}?ws.op=getAccessTokens:
     get:
       tags:
@@ -21677,7 +22651,10 @@ paths:
         - *a97
       responses:
         "200":
-          description: Successful response
+          description: The new bug subscription.
+          content:
+            application/json:
+              schema: {}
   /{project}?ws.op=addBugSubscriptionFilter:
     post:
       tags:
@@ -21701,7 +22678,10 @@ paths:
         - *a97
       responses:
         "200":
-          description: Successful response
+          description: The new bug subscription filter.
+          content:
+            application/json:
+              schema: {}
   /{project}?ws.op=removeBugSubscription:
     post:
       tags:
@@ -21726,6 +22706,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{project}?ws.op=addAnswerContact:
     post:
       tags:
@@ -21752,7 +22735,12 @@ paths:
         - *a97
       responses:
         "200":
-          description: Successful response
+          description: True if the person was added, False if the person already is an answer contact.
+          content:
+            application/json:
+              schema:
+                type: boolean
+                nullable: true
   /{project}?ws.op=removeAnswerContact:
     post:
       tags:
@@ -21779,7 +22767,12 @@ paths:
         - *a97
       responses:
         "200":
-          description: Successful response
+          description: True if the person was removed, False if the person wasn't an answer contact.
+          content:
+            application/json:
+              schema:
+                type: boolean
+                nullable: true
   /{project}?ws.op=issueAccessToken:
     post:
       tags:
@@ -21812,7 +22805,10 @@ paths:
         - *a97
       responses:
         "200":
-          description: Successful response
+          description: The secret for a new personal access token (Launchpad only records the hash of this secret and not the secret itself, so the caller must be careful to save this).
+          content:
+            application/json:
+              schema: {}
   /{project}?ws.op=newWebhook:
     post:
       tags:
@@ -21849,6 +22845,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{project}?ws.op=newCodeImport:
     post:
       tags:
@@ -21899,6 +22898,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{project}?ws.op=newSeries:
     post:
       tags:
@@ -21937,6 +22939,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{project}?ws.op=addOfficialBugTag:
     post:
       tags:
@@ -21962,6 +22967,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{project}?ws.op=removeOfficialBugTag:
     post:
       tags:
@@ -21987,6 +22995,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{project}:
     get:
       tags:
@@ -22105,6 +23116,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{project_release}?ws.op=delete:
     post:
       tags:
@@ -22117,6 +23131,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{project_release}:
     get:
       tags:
@@ -22185,6 +23202,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{project_release_file}:
     get:
       tags:
@@ -22515,6 +23535,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{project}/{series}?ws.op=getTranslationImportQueueEntries:
     get:
       tags:
@@ -22612,6 +23635,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{project}/{series}?ws.op=addBugSubscription:
     post:
       tags:
@@ -22636,7 +23662,10 @@ paths:
         - *a101
       responses:
         "200":
-          description: Successful response
+          description: The new bug subscription.
+          content:
+            application/json:
+              schema: {}
   /{project}/{series}?ws.op=addBugSubscriptionFilter:
     post:
       tags:
@@ -22661,7 +23690,10 @@ paths:
         - *a101
       responses:
         "200":
-          description: Successful response
+          description: The new bug subscription filter.
+          content:
+            application/json:
+              schema: {}
   /{project}/{series}?ws.op=removeBugSubscription:
     post:
       tags:
@@ -22687,6 +23719,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{project}/{series}?ws.op=newMilestone:
     post:
       tags:
@@ -22722,6 +23757,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{project}/{series}:
     get:
       tags:
@@ -22834,6 +23872,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{project_group}?ws.op=searchTasks:
     get:
       tags:
@@ -23140,7 +24181,10 @@ paths:
         - *a102
       responses:
         "200":
-          description: Successful response
+          description: The new bug subscription.
+          content:
+            application/json:
+              schema: {}
   /{project_group}?ws.op=addBugSubscriptionFilter:
     post:
       tags:
@@ -23164,7 +24208,10 @@ paths:
         - *a102
       responses:
         "200":
-          description: Successful response
+          description: The new bug subscription filter.
+          content:
+            application/json:
+              schema: {}
   /{project_group}?ws.op=removeBugSubscription:
     post:
       tags:
@@ -23189,6 +24236,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{project_group}:
     get:
       tags:
@@ -23297,6 +24347,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{project_group_milestone}?ws.op=searchTasks:
     get:
       tags:
@@ -23530,7 +24583,10 @@ paths:
         - *a103
       responses:
         "200":
-          description: Successful response
+          description: The new bug subscription.
+          content:
+            application/json:
+              schema: {}
   /{project_group_milestone}?ws.op=addBugSubscriptionFilter:
     post:
       tags:
@@ -23554,7 +24610,10 @@ paths:
         - *a103
       responses:
         "200":
-          description: Successful response
+          description: The new bug subscription filter.
+          content:
+            application/json:
+              schema: {}
   /{project_group_milestone}?ws.op=removeBugSubscription:
     post:
       tags:
@@ -23579,6 +24638,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{project_group_milestone}?ws.op=createProductRelease:
     post:
       tags:
@@ -23610,6 +24672,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{project_group_milestone}:
     get:
       tags:
@@ -23702,6 +24767,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{question}?ws.op=subscribe:
     post:
       tags:
@@ -23728,7 +24796,10 @@ paths:
         - *a104
       responses:
         "200":
-          description: Successful response
+          description: an IQuestionSubscription.
+          content:
+            application/json:
+              schema: {}
   /{question}?ws.op=unsubscribe:
     post:
       tags:
@@ -23753,6 +24824,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{question}?ws.op=setCommentVisibility:
     post:
       tags:
@@ -23783,6 +24857,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{question}:
     get:
       tags:
@@ -23851,6 +24928,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{question_message}?ws.op=editContent:
     post:
       tags:
@@ -23876,6 +24956,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{question_message}?ws.op=deleteContent:
     post:
       tags:
@@ -23888,6 +24971,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{question_message}:
     get:
       tags:
@@ -24081,6 +25167,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{question_target}?ws.op=findSimilarQuestions:
     get:
       tags:
@@ -24165,6 +25254,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{question_target}?ws.op=addAnswerContact:
     post:
       tags:
@@ -24191,7 +25283,12 @@ paths:
         - *a107
       responses:
         "200":
-          description: Successful response
+          description: True if the person was added, False if the person already is an answer contact.
+          content:
+            application/json:
+              schema:
+                type: boolean
+                nullable: true
   /{question_target}?ws.op=removeAnswerContact:
     post:
       tags:
@@ -24218,7 +25315,12 @@ paths:
         - *a107
       responses:
         "200":
-          description: Successful response
+          description: True if the person was removed, False if the person wasn't an answer contact.
+          content:
+            application/json:
+              schema:
+                type: boolean
+                nullable: true
   /{question_target}:
     get:
       tags:
@@ -24295,6 +25397,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{revision_status_report}?ws.op=setLog:
     post:
       tags:
@@ -24316,6 +25421,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{revision_status_report}?ws.op=attach:
     post:
       tags:
@@ -24344,6 +25452,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{revision_status_report}?ws.op=update:
     post:
       tags:
@@ -24384,6 +25495,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{revision_status_report}:
     get:
       tags:
@@ -24464,6 +25578,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{rock_base}:
     get:
       tags:
@@ -24542,7 +25659,10 @@ paths:
             type: string
       responses:
         "200":
-          description: Successful response
+          description: A collection of URLs for this build.
+          content:
+            application/json:
+              schema: {}
   /{rock_recipe_build}?ws.op=rescore:
     post:
       tags:
@@ -24568,6 +25688,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{rock_recipe_build}?ws.op=cancelUpload:
     post:
       tags:
@@ -24580,6 +25703,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{rock_recipe_build}?ws.op=retry:
     post:
       tags:
@@ -24592,6 +25718,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{rock_recipe_build}?ws.op=cancel:
     post:
       tags:
@@ -24604,6 +25733,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{rock_recipe_build}:
     get:
       tags:
@@ -24740,7 +25872,10 @@ paths:
             type: string
       responses:
         "200":
-          description: Successful response
+          description: An IRockRecipeBuildRequest.
+          content:
+            application/json:
+              schema: {}
   /{rock_recipe}:
     get:
       tags:
@@ -24820,6 +25955,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{ssh_key}:
     get:
       tags:
@@ -25127,6 +26265,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{sharing_service}?ws.op=sharePillarInformation:
     post:
       tags:
@@ -25165,6 +26306,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{sharing_service}?ws.op=deletePillarGrantee:
     post:
       tags:
@@ -25201,6 +26345,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{sharing_service}?ws.op=revokeAccessGrants:
     post:
       tags:
@@ -25256,6 +26403,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{sharing_service}?ws.op=ensureAccessGrants:
     post:
       tags:
@@ -25298,6 +26448,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{sharing_service}?ws.op=updatePillarSharingPolicies:
     post:
       tags:
@@ -25352,6 +26505,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{sharing_service}:
     get:
       tags:
@@ -25467,7 +26623,10 @@ paths:
         - *a115
       responses:
         "200":
-          description: Successful response
+          description: an IArchiveDependency.
+          content:
+            application/json:
+              schema: {}
   /{snap_base}?ws.op=removeArchiveDependency:
     post:
       tags:
@@ -25494,6 +26653,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{snap_base}?ws.op=setProcessors:
     post:
       tags:
@@ -25518,6 +26680,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{snap_base}:
     get:
       tags:
@@ -25596,7 +26761,10 @@ paths:
             type: string
       responses:
         "200":
-          description: Successful response
+          description: A collection of URLs for this build.
+          content:
+            application/json:
+              schema: {}
   /{snap_build}?ws.op=rescore:
     post:
       tags:
@@ -25622,6 +26790,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{snap_build}?ws.op=cancelUpload:
     post:
       tags:
@@ -25634,6 +26805,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{snap_build}?ws.op=retry:
     post:
       tags:
@@ -25646,6 +26820,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{snap_build}?ws.op=cancel:
     post:
       tags:
@@ -25658,6 +26835,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{snap_build}?ws.op=scheduleStoreUpload:
     post:
       tags:
@@ -25670,6 +26850,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{snap_build}:
     get:
       tags:
@@ -25828,7 +27011,10 @@ paths:
             type: string
       responses:
         "200":
-          description: Successful response
+          description: A dict of {"requests", "builds"}, consisting of the overall status summaries for the given snap build requests and snap builds respectively.
+          content:
+            application/json:
+              schema: {}
   /{snap}?ws.op=newWebhook:
     post:
       tags:
@@ -25865,6 +27051,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{snap}?ws.op=requestAutoBuilds:
     post:
       tags:
@@ -25892,7 +27081,10 @@ paths:
         - *a118
       responses:
         "200":
-          description: Successful response
+          description: The SSO caveat ID from the package_upload macaroon returned by the store. The third-party site should acquire a discharge macaroon for this caveat using OpenID and then call completeAuthorization.
+          content:
+            application/json:
+              schema: {}
   /{snap}?ws.op=completeAuthorization:
     post:
       tags:
@@ -25918,6 +27110,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{snap}?ws.op=setProcessors:
     post:
       tags:
@@ -25942,6 +27137,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{snap}?ws.op=requestBuild:
     post:
       tags:
@@ -25990,7 +27188,10 @@ paths:
         - *a118
       responses:
         "200":
-          description: Successful response
+          description: ISnapBuild.
+          content:
+            application/json:
+              schema: {}
   /{snap}?ws.op=requestBuilds:
     post:
       tags:
@@ -26029,7 +27230,10 @@ paths:
         - *a118
       responses:
         "200":
-          description: Successful response
+          description: An ISnapBuildRequest.
+          content:
+            application/json:
+              schema: {}
   /{snap}:
     get:
       tags:
@@ -26590,7 +27794,10 @@ paths:
         - *a123
       responses:
         "200":
-          description: Successful response
+          description: "A {Pocket-name : IBranch} dict."
+          content:
+            application/json:
+              schema: {}
   /{distribution}/{series}/+source/{source}?ws.op=setBranch:
     post:
       tags:
@@ -26628,7 +27835,10 @@ paths:
         - *a123
       responses:
         "200":
-          description: Successful response
+          description: None
+          content:
+            application/json:
+              schema: {}
   /{distribution}/{series}/+source/{source}?ws.op=newCodeImport:
     post:
       tags:
@@ -26681,6 +27891,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/{series}/+source/{source}?ws.op=setPackaging:
     post:
       tags:
@@ -26709,6 +27922,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/{series}/+source/{source}?ws.op=deletePackaging:
     post:
       tags:
@@ -26723,6 +27939,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/{series}/+source/{source}:
     get:
       tags:
@@ -26855,7 +28074,13 @@ paths:
         - *a126
       responses:
         "200":
-          description: Successful response
+          description: the .changes file URL for this source (a string).
+          content:
+            application/json:
+              schema:
+                type: string
+                nullable: true
+                format: uri
   /{distribution}/+archive/{archive}/+sourcepub/{id}?ws.op=sourceFileUrls:
     get:
       tags:
@@ -26875,7 +28100,10 @@ paths:
             type: string
       responses:
         "200":
-          description: Successful response
+          description: A collection of URLs for this source.
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}/+sourcepub/{id}?ws.op=binaryFileUrls:
     get:
       tags:
@@ -26889,7 +28117,10 @@ paths:
         - *a126
       responses:
         "200":
-          description: Successful response
+          description: A collection of URLs for this source.
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}/+sourcepub/{id}?ws.op=packageDiffUrl:
     get:
       tags:
@@ -26910,7 +28141,10 @@ paths:
           example: to_version
       responses:
         "200":
-          description: Successful response
+          description: A URL to the librarian file containing the diff.
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}/+sourcepub/{id}?ws.op=hasRestrictedFiles:
     get:
       tags:
@@ -26925,6 +28159,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}/+sourcepub/{id}?ws.op=changelogUrl:
     get:
       tags:
@@ -26938,7 +28175,13 @@ paths:
         - *a126
       responses:
         "200":
-          description: Successful response
+          description: the changelog file URL for this source (a string).
+          content:
+            application/json:
+              schema:
+                type: string
+                nullable: true
+                format: uri
   /{distribution}/+archive/{archive}/+sourcepub/{id}?ws.op=requestDeletion:
     post:
       tags:
@@ -26963,6 +28206,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{distribution}/+archive/{archive}/+sourcepub/{id}?ws.op=changeOverride:
     post:
       tags:
@@ -27081,6 +28327,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{source_package_recipe_build}?ws.op=cancelUpload:
     post:
       tags:
@@ -27093,6 +28342,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{source_package_recipe_build}?ws.op=retry:
     post:
       tags:
@@ -27105,6 +28357,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{source_package_recipe_build}?ws.op=cancel:
     post:
       tags:
@@ -27117,6 +28372,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{source_package_recipe_build}:
     get:
       tags:
@@ -27185,6 +28443,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{source_package_recipe}?ws.op=requestBuild:
     post:
       tags:
@@ -27243,6 +28504,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{source_package_recipe}:
     get:
       tags:
@@ -27311,6 +28575,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{specification_branch}:
     get:
       tags:
@@ -27393,6 +28660,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{specification}?ws.op=unlinkBranch:
     post:
       tags:
@@ -27419,6 +28689,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{specification}?ws.op=linkBug:
     post:
       tags:
@@ -27445,6 +28718,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{specification}?ws.op=unlinkBug:
     post:
       tags:
@@ -27471,6 +28747,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{specification}?ws.op=acceptGoal:
     post:
       tags:
@@ -27483,6 +28762,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{specification}?ws.op=declineGoal:
     post:
       tags:
@@ -27495,6 +28777,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{specification}?ws.op=proposeGoal:
     post:
       tags:
@@ -27519,6 +28804,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{specification}?ws.op=subscribe:
     post:
       tags:
@@ -27549,6 +28837,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{specification}?ws.op=unsubscribe:
     post:
       tags:
@@ -27573,6 +28864,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{specification}:
     get:
       tags:
@@ -27641,6 +28935,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{specification_subscription}:
     get:
       tags:
@@ -27788,6 +29085,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{structural_subscription}:
     get:
       tags:
@@ -27907,6 +29207,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{structural_subscription_target}?ws.op=addBugSubscription:
     post:
       tags:
@@ -27930,7 +29233,10 @@ paths:
         - *a134
       responses:
         "200":
-          description: Successful response
+          description: The new bug subscription.
+          content:
+            application/json:
+              schema: {}
   /{structural_subscription_target}?ws.op=addBugSubscriptionFilter:
     post:
       tags:
@@ -27954,7 +29260,10 @@ paths:
         - *a134
       responses:
         "200":
-          description: Successful response
+          description: The new bug subscription filter.
+          content:
+            application/json:
+              schema: {}
   /{structural_subscription_target}?ws.op=removeBugSubscription:
     post:
       tags:
@@ -27979,6 +29288,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{structural_subscription_target}:
     get:
       tags:
@@ -28388,6 +29700,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{team}?ws.op=getRecipe:
     get:
       tags:
@@ -28422,6 +29737,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{team}?ws.op=getBugSubscriberPackages:
     get:
       tags:
@@ -28690,6 +30008,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{team}?ws.op=join:
     post:
       tags:
@@ -28717,6 +30038,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{team}?ws.op=leave:
     post:
       tags:
@@ -28744,6 +30068,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{team}?ws.op=addMember:
     post:
       tags:
@@ -28784,7 +30111,10 @@ paths:
         - *a135
       responses:
         "200":
-          description: Successful response
+          description: A tuple containing a boolean indicating when the membership status changed and the current TeamMembershipStatus. This depends on the desired status passed as an argument, the membership policy and the user's privileges.
+          content:
+            application/json:
+              schema: {}
   /{team}?ws.op=acceptInvitationToBeMemberOf:
     post:
       tags:
@@ -28816,6 +30146,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{team}?ws.op=declineInvitationToBeMemberOf:
     post:
       tags:
@@ -28847,6 +30180,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{team}?ws.op=retractTeamMembership:
     post:
       tags:
@@ -28876,6 +30212,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{team}?ws.op=createPPA:
     post:
       tags:
@@ -28908,7 +30247,10 @@ paths:
         - *a135
       responses:
         "200":
-          description: Successful response
+          description: a PPA IArchive record.
+          content:
+            application/json:
+              schema: {}
   /{team}?ws.op=createRecipe:
     post:
       tags:
@@ -28950,7 +30292,10 @@ paths:
         - *a135
       responses:
         "200":
-          description: Successful response
+          description: a SourcePackageRecipe.
+          content:
+            application/json:
+              schema: {}
   /{team}?ws.op=getArchiveSubscriptionURL:
     post:
       tags:
@@ -28977,6 +30322,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{team}?ws.op=setAccountStatus:
     post:
       tags:
@@ -29015,6 +30363,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{team}?ws.op=addLanguage:
     post:
       tags:
@@ -29041,6 +30392,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{team}?ws.op=removeLanguage:
     post:
       tags:
@@ -29067,6 +30421,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{team}:
     get:
       tags:
@@ -29145,6 +30502,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{team_membership}?ws.op=setStatus:
     post:
       tags:
@@ -29185,6 +30545,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{team_membership}:
     get:
       tags:
@@ -29253,6 +30616,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{temporary_blob}?ws.op=getProcessedData:
     get:
       tags:
@@ -29265,6 +30631,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{temporary_blob}:
     get:
       tags:
@@ -29466,6 +30835,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{translation_import_queue_entry}:
     get:
       tags:
@@ -29600,6 +30972,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{webhook_delivery}:
     get:
       tags:
@@ -29668,6 +31043,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{webhook}?ws.op=setSecret:
     post:
       tags:
@@ -29690,6 +31068,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{webhook}:
     get:
       tags:
@@ -29789,6 +31170,9 @@ paths:
       responses:
         "200":
           description: Successful response
+          content:
+            application/json:
+              schema: {}
   /{webhook_target}:
     get:
       tags:
@@ -30211,6 +31595,9 @@ components:
           format: uri
           x-lp-resource-type: archive
           description: The archive set as a dependency.
+        pin_priority:
+          type: string
+          description: Pin priority The pin priority determining package installation priority.
         pocket:
           type: string
           enum:
@@ -30233,11 +31620,16 @@ components:
         - component_name
         - date_created
         - dependency_link
+        - pin_priority
         - pocket
         - snap_base_link
         - title
     archive_dependency-diff:
       type: object
+      properties:
+        pin_priority:
+          type: string
+          description: Pin priority The pin priority determining package installation priority.
     archive_dependency-page:
       type: object
       properties:

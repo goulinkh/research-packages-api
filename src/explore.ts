@@ -201,10 +201,11 @@ export class Explorer {
     /**
      * Print a resource straight to stdout as `bat`-style blocks — one titled,
      * line-numbered panel per category (`summary`, then `links`) — so callers
-     * don't wrap it in `console.log`.
+     * don't wrap it in `console.log`. An explicit `label` overrides the name
+     * derived from the resource.
      */
-    show(value: unknown): void {
-        const name = resourceName(value);
+    show(value: unknown, label?: string): void {
+        const name = label ?? resourceName(value);
         const blocks: [string, string][] = [
             [name ? `summary: ${name}` : "summary", this.summarize(value)]
         ];

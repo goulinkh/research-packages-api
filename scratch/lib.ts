@@ -14,3 +14,11 @@ import { Explorer } from "../src/explore.ts";
 
 export const lp = createLaunchpadClient({ token: process.env.LP_TOKEN });
 export const x = new Explorer({ token: process.env.LP_TOKEN });
+
+/** Throw if `value` is null/undefined, narrowing it for the caller. */
+export function assertDefined<T>(
+    value: T,
+    message: string
+): asserts value is NonNullable<T> {
+    if (value == null) throw new Error(message);
+}
