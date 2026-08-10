@@ -1,5 +1,5 @@
 # Source: https://goulinkh.github.io/launchpad-wadl-to-openapi/launchpad-devel.openapi.yaml
-# Generator: https://github.com/goulinkh/launchpad-wadl-to-openapi @ e6cbe9006b3199f3d5ef6c8523807140dbd64c33 (main)
+# Generator: https://github.com/goulinkh/launchpad-wadl-to-openapi @ 32cd4d0e9cd64d61a22badc1142f843a3e29b868 (main)
 openapi: 3.0.3
 info:
   title: Launchpad Web Service API
@@ -7080,7 +7080,11 @@ paths:
           description: A collection of URLs for this binary.
           content:
             application/json:
-              schema: {}
+              schema:
+                type: array
+                items:
+                  type: string
+                  format: uri
   /{binary_package_publishing_history}?ws.op=requestDeletion:
     post:
       tags:
@@ -10783,7 +10787,11 @@ paths:
           description: A collection of URLs for this build.
           content:
             application/json:
-              schema: {}
+              schema:
+                type: array
+                items:
+                  type: string
+                  format: uri
   /{ci_build}?ws.op=rescore:
     post:
       tags:
@@ -11021,7 +11029,11 @@ paths:
           description: A collection of URLs for this build.
           content:
             application/json:
-              schema: {}
+              schema:
+                type: array
+                items:
+                  type: string
+                  format: uri
   /{charm_recipe_build}?ws.op=rescore:
     post:
       tags:
@@ -11807,7 +11819,11 @@ paths:
           description: A collection of URLs for this build.
           content:
             application/json:
-              schema: {}
+              schema:
+                type: array
+                items:
+                  type: string
+                  format: uri
   /{craft_recipe_build}?ws.op=rescore:
     post:
       tags:
@@ -17851,7 +17867,11 @@ paths:
           description: A collection of URLs for this build.
           content:
             application/json:
-              schema: {}
+              schema:
+                type: array
+                items:
+                  type: string
+                  format: uri
   /{livefs_build}?ws.op=rescore:
     post:
       tags:
@@ -19457,7 +19477,11 @@ paths:
           description: A collection of URLs for this build.
           content:
             application/json:
-              schema: {}
+              schema:
+                type: array
+                items:
+                  type: string
+                  format: uri
   /{oci_recipe_build}?ws.op=rescore:
     post:
       tags:
@@ -19964,7 +19988,11 @@ paths:
           description: A collection of URLs for this upload.
           content:
             application/json:
-              schema: {}
+              schema:
+                type: array
+                items:
+                  type: string
+                  format: uri
   /{package_upload}?ws.op=binaryFileUrls:
     get:
       tags:
@@ -19979,7 +20007,11 @@ paths:
           description: A collection of URLs for this upload.
           content:
             application/json:
-              schema: {}
+              schema:
+                type: array
+                items:
+                  type: string
+                  format: uri
   /{package_upload}?ws.op=customFileUrls:
     get:
       tags:
@@ -19994,7 +20026,11 @@ paths:
           description: A collection of URLs for this upload.
           content:
             application/json:
-              schema: {}
+              schema:
+                type: array
+                items:
+                  type: string
+                  format: uri
   /{package_upload}?ws.op=getBinaryProperties:
     get:
       tags:
@@ -25662,7 +25698,11 @@ paths:
           description: A collection of URLs for this build.
           content:
             application/json:
-              schema: {}
+              schema:
+                type: array
+                items:
+                  type: string
+                  format: uri
   /{rock_recipe_build}?ws.op=rescore:
     post:
       tags:
@@ -26764,7 +26804,11 @@ paths:
           description: A collection of URLs for this build.
           content:
             application/json:
-              schema: {}
+              schema:
+                type: array
+                items:
+                  type: string
+                  format: uri
   /{snap_build}?ws.op=rescore:
     post:
       tags:
@@ -28103,7 +28147,11 @@ paths:
           description: A collection of URLs for this source.
           content:
             application/json:
-              schema: {}
+              schema:
+                type: array
+                items:
+                  type: string
+                  format: uri
   /{distribution}/+archive/{archive}/+sourcepub/{id}?ws.op=binaryFileUrls:
     get:
       tags:
@@ -28120,7 +28168,11 @@ paths:
           description: A collection of URLs for this source.
           content:
             application/json:
-              schema: {}
+              schema:
+                type: array
+                items:
+                  type: string
+                  format: uri
   /{distribution}/+archive/{archive}/+sourcepub/{id}?ws.op=packageDiffUrl:
     get:
       tags:

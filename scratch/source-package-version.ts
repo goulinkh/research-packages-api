@@ -99,23 +99,32 @@ const { data: gitRepo } = await lp.GET("/+git?ws.op=getDefaultRepository", {
 
 x.show(gitRepo, "default git repo");
 
-// latest builds per series/arch — per SPPH (entries: arch_tag, buildstate, web_link)
-const { data: builds,response } = await lp.GET(
+// latest builds per series/arch — per SPPH (entries: arch_tag, buildstate, web_link).
+// Builds attach to the ORIGINAL upload's publication; copies (e.g. the entry
+// for the series the version was copied into) return an empty list. Entries
+// are ordered by descending id, so the last one is the original upload.
+const originalId = spph.entries.at(-1)?.self_link?.split("/").at(-1);
+assertDefined(originalId, "could not parse original publication id");
+
+const { data: builds, response } = await lp.GET(
     "/{distribution}/+archive/{archive}/+sourcepub/{id}?ws.op=getBuilds",
-    // publicationPath maps ubuntu/+source/alsa-utils/1.2.15.2-1ubuntu1 to its
-    // SPPH: { distribution: "ubuntu", archive: "primary", id: publicationId }
-    { params: { path: publicationPath } }
+    { params: { path: { ...publicationPath, id: originalId } } }
 );
-console.log(response.url)
+console.log(response.url);
 x.show(builds, "builds (per SPPH)");
 
-// …or bulk: one request for all publications (keyed by SPPH id)
+// …or bulk: one request for all publications (keyed by SPPH id). Same
+// copy-vs-upload caveat: a copy's id maps to { builds: [] }, so pass every
+// publication id and read the builds off the original upload's entry.
+const sourceIds = spph.entries.map((e) =>
+    Number(e.self_link?.split("/").at(-1))
+);
 const { data: buildSummaries } = await lp.GET(
     "/{distribution}/+archive/{archive}?ws.op=getBuildSummariesForSourceIds",
     {
         params: {
             path: { distribution: ubuntu.name, archive: ubuntuMainArchive.name },
-            query: { source_ids: JSON.stringify([Number(publicationId)]) }
+            query: { source_ids: JSON.stringify(sourceIds) }
         }
     }
 );
