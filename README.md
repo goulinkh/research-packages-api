@@ -24,8 +24,9 @@ npm install
 ## Update the API types
 
 Generation is a two-step pipeline. First the published `devel` spec is vendored
-into `.api-spec/` with a provenance header (source URL + the generator repo's
-resolved commit). Then `openapi-typescript` turns it into `src/schema/devel.ts`:
+into `.api-spec/` with a provenance header (source URL, instance, and the
+generator repo's resolved commit). Then `openapi-typescript` turns it into
+`src/schema/devel.ts`:
 
 ```sh
 npm run openapi:update           # update-schema + generate-types
@@ -34,7 +35,29 @@ npm run openapi:generate-types   # .api-spec/*.yaml -> src/schema/*.ts
 ```
 
 The fetch script is configurable via environment variables:
-`LP_SPEC_REPO_URL`, `LP_SPEC_BRANCH`, `LP_SPEC_PAGES_URL`, `LP_API_VERSIONS`.
+`LP_SPEC_REPO_URL`, `LP_SPEC_BRANCH`, `LP_SPEC_PAGES_URL`, `LP_API_VERSIONS`,
+`LP_INSTANCE`.
+
+### QA staging
+
+qastaging runs ahead of production, so its spec is a **superset**: today it
+carries 18 paths and 3 schemas production does not, including
+`searchTasksCounts` and `getTranslationCoverage`. It is generated and typed
+separately rather than merged, so production calls cannot reference operations
+that do not exist there yet.
+
+```sh
+npm run openapi:update:qastaging  # -> .api-spec/qastaging/, src/schema/qastaging/
+npm run openapi:update:all        # both instances
+```
+
+The local `.api-spec/` layout mirrors the published Pages layout: production at
+the root, qastaging under `qastaging/`.
+
+> The generator commit alone does not identify a spec's contents — each deploy
+> regenerates from the live instance, and qastaging drifts faster. Re-run the
+> update when you need current qastaging surface, not only when the generator
+> changes.
 
 ## Usage
 
@@ -52,6 +75,23 @@ for (const entry of data.entries ?? []) {
 }
 ```
 
+### QA staging client
+
+`createQastagingClient` is typed against `src/schema/qastaging/devel.ts` and
+hardwires `api.qastaging.launchpad.net` — those types describe qastaging and
+nothing else, so the host is not an option.
+
+```ts
+import { createQastagingClient } from "research-packages-api";
+
+const qas = createQastagingClient();
+
+const { data } = await qas.GET(
+  "/{distribution}/{series}?ws.op=getTranslationCoverage",
+  { params: { path: { distribution: "ubuntu", series: "trusty" } } },
+);
+```
+
 ### Options
 
 | Option         | Default          | Description                                                      |
@@ -60,8 +100,10 @@ for (const entry of data.entries ?? []) {
 | `token`        | —                | OAuth token, sent as `Authorization: OAuth <token>`.             |
 | `fetchOptions` | —                | Extra `openapi-fetch` options (custom `fetch`, headers, …).      |
 
-The client is fully typed: `GET`/`POST` paths, path/query params, and response
-bodies all come from the generated `src/schema/devel.ts`.
+`createQastagingClient` takes the same options minus `instance`.
+
+Both clients are fully typed: `GET`/`POST` paths, path/query params, and
+response bodies all come from the matching generated schema module.
 
 ## Exploration
 

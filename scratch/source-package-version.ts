@@ -1,11 +1,11 @@
 // Source package version (SPPH) https://launchpad.net/ubuntu/+source/{name}/{version}
 import { type components } from "../src/index.ts";
-import { lp, x, pp, assertDefined } from "./lib.ts";
+import { qas, x, pp, assertDefined } from "./lib.ts";
 
 const name = "alsa-utils";
 const version = "1.2.15.2-1ubuntu1";
 
-const { data: ubuntu } = await lp.GET("/{distribution}", {
+const { data: ubuntu } = await qas.GET("/{distribution}", {
     params: { path: { distribution: "ubuntu" } }
 });
 
@@ -14,7 +14,7 @@ assertDefined(ubuntu, "distro not found");
 type Archive = components["schemas"]["archive-full"];
 const ubuntuMainArchive = await x.get<Archive>(ubuntu.main_archive_link);
 
-const { data: spph } = await lp.GET(
+const { data: spph } = await qas.GET(
     "/{distribution}/+archive/{archive}?ws.op=getPublishedSources",
     {
         params: {
@@ -24,7 +24,7 @@ const { data: spph } = await lp.GET(
             },
             query: {
                 source_name: name,
-                exact_match: "true",
+                exact_match: "",
                 version: version
             }
         }
@@ -57,7 +57,7 @@ const publicationPath = {
 };
 
 // changelogs
-const { data: changelogUrl } = await lp.GET(
+const { data: changelogUrl } = await qas.GET(
     "/{distribution}/+archive/{archive}/+sourcepub/{id}?ws.op=changelogUrl",
     { params: { path: publicationPath } }
 );
@@ -67,7 +67,7 @@ const changelog = await x.get(changelogUrl, undefined, "raw");
 x.show(changelog);
 
 // .changes files ?ws.op=changesFileUrl
-const { data: changesFileUrl } = await lp.GET(
+const { data: changesFileUrl } = await qas.GET(
     "/{distribution}/+archive/{archive}/+sourcepub/{id}?ws.op=changesFileUrl",
     { params: { path: publicationPath } }
 );
@@ -78,7 +78,7 @@ const changesFile = await x.get(changesFileUrl, undefined, "raw");
 x.show(changesFile);
 
 // source files + checksums (+1 request; sha256 only, filename parsed from URL)
-const { data: sourceFiles } = await lp.GET(
+const { data: sourceFiles } = await qas.GET(
     "/{distribution}/+archive/{archive}/+sourcepub/{id}?ws.op=sourceFileUrls",
     { params: { path: publicationPath, query: { include_meta: "true" } } }
 );
@@ -89,7 +89,7 @@ x.show(
 );
 
 // source (Ubuntu) git repo — page-wide (not per row)
-const { data: gitRepo } = await lp.GET("/+git?ws.op=getDefaultRepository", {
+const { data: gitRepo } = await qas.GET("/+git?ws.op=getDefaultRepository", {
     params: {
         query: {
             target: `https://api.launchpad.net/devel/${ubuntu.name}/+source/${name}`
@@ -106,7 +106,7 @@ x.show(gitRepo, "default git repo");
 const originalId = spph.entries.at(-1)?.self_link?.split("/").at(-1);
 assertDefined(originalId, "could not parse original publication id");
 
-const { data: builds, response } = await lp.GET(
+const { data: builds, response } = await qas.GET(
     "/{distribution}/+archive/{archive}/+sourcepub/{id}?ws.op=getBuilds",
     { params: { path: { ...publicationPath, id: originalId } } }
 );
@@ -119,7 +119,7 @@ x.show(builds, "builds (per SPPH)");
 const sourceIds = spph.entries.map((e) =>
     Number(e.self_link?.split("/").at(-1))
 );
-const { data: buildSummaries } = await lp.GET(
+const { data: buildSummaries } = await qas.GET(
     "/{distribution}/+archive/{archive}?ws.op=getBuildSummariesForSourceIds",
     {
         params: {
@@ -133,7 +133,7 @@ x.show(buildSummaries as Record<string, unknown>, "build summaries (bulk)");
 
 // builds list + binary objects — paginated BPPH page per SPPH (entries carry
 // binary_package_name, binary_package_version, distro_arch_series_link, build_link)
-const { data: binaries } = await lp.GET(
+const { data: binaries } = await qas.GET(
     "/{distribution}/+archive/{archive}/+sourcepub/{id}?ws.op=getPublishedBinaries",
     { params: { path: publicationPath } }
 );
@@ -141,7 +141,7 @@ const { data: binaries } = await lp.GET(
 x.show(binaries, "published binaries");
 
 // binary download links — per publication (SPPH)
-const { data: binaryUrls } = await lp.GET(
+const { data: binaryUrls } = await qas.GET(
     "/{distribution}/+archive/{archive}/+sourcepub/{id}?ws.op=binaryFileUrls",
     { params: { path: publicationPath } }
 );
@@ -162,7 +162,7 @@ if (firstBinary?.self_link) {
 
 // single debdiff URL — only if you already know both versions: call on the
 // OLDER publication with to_version = the newer version
-const { data: allVersions } = await lp.GET(
+const { data: allVersions } = await qas.GET(
     "/{distribution}/+archive/{archive}?ws.op=getPublishedSources",
     {
         params: {
@@ -177,7 +177,7 @@ const previous = allVersions?.entries.find(
 );
 const previousId = previous?.self_link?.split("/").at(-1);
 if (previous && previousId) {
-    const { data: debdiffUrl, response } = await lp.GET(
+    const { data: debdiffUrl, response } = await qas.GET(
         "/{distribution}/+archive/{archive}/+sourcepub/{id}?ws.op=packageDiffUrl",
         {
             params: {
